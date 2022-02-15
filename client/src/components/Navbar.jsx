@@ -166,7 +166,7 @@ const func = (e) => {
     <>
     <nav>
   <ul class="menu">
-    <li class="logo"><a href="/">POOSHA</a></li>
+    <li class="logo"><a href="/"><img src="../img/logo.png" alt="" /></a></li>
     {/* <li class="item"><a href="#about">About</a></li> */}
     {/* <li class="item has-submenu">
       <a tabindex="0">Products</a>

@@ -42,7 +42,7 @@
   .item a:hover::after {
     color: #ccc;
   }
-  
+
   /* Mobile menu */
   .menu {
     display: flex;
@@ -128,6 +128,10 @@
       margin: 5px 0;
     }
 
+  }
+
+  .menu li img {
+      height: 2.45em;
   }
   /* Desktop menu */
   @media all and (min-width: 960px) {
