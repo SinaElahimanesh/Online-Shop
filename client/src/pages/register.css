@@ -1,0 +1,14 @@
+.register, .login {
+    color: black;
+    margin: 25px;
+    margin: 5px 0px;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.register:hover , .login:hover{
+    color: #ea4;
+}

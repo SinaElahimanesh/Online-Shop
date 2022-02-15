@@ -1,9 +1,13 @@
 import styled from "styled-components";
+import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
+import "./register.css";
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  color: #000;
   background: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
@@ -20,6 +24,7 @@ const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
   background-color: white;
+  color: #000;
   ${mobile({ width: "75%" })}
 `;
 
@@ -52,11 +57,13 @@ const Button = styled.button`
   background-color: teal;
   color: white;
   cursor: pointer;
+  margin-top: 30px;
 `;
 
 const Register = () => {
   return (
     <Container>
+      {/* <Navbar /> */}
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
         <Form>
@@ -66,11 +73,8 @@ const Register = () => {
           <Input placeholder="email" />
           <Input placeholder="password" />
           <Input placeholder="confirm password" />
-          <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
-          </Agreement>
           <Button>CREATE</Button>
+          <Link to="/login" className="register">Already have an Account?</Link>
         </Form>
       </Wrapper>
     </Container>
