@@ -1,0 +1,11 @@
+.container {
+    margin-top: 50px;
+}
+
+.slider-btn {
+    margin-top: -500px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+}

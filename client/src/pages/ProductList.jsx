@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router";
 import { useState } from "react";
+import About from "../components/About";
 
 const Container = styled.div``;
 
@@ -55,7 +56,6 @@ const ProductList = () => {
   return (
     <Container>
       <Navbar />
-      <Announcement />
       <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
@@ -88,7 +88,7 @@ const ProductList = () => {
         </Filter>
       </FilterContainer>
       <Products cat={cat} filters={filters} sort={sort} />
-      <Newsletter />
+      <About />
       <Footer />
     </Container>
   );

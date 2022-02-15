@@ -86,9 +86,9 @@ const Payment = styled.img`
 
 const Footer = () => {
   return (
-    <Container>
+    <Container id="contact">
       <Left>
-        <Logo>LAMA.</Logo>
+        {/* <Logo>LAMA.</Logo>
         <Desc>
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected
@@ -107,9 +107,8 @@ const Footer = () => {
           <SocialIcon color="E60023">
             <Pinterest />
           </SocialIcon>
-        </SocialContainer>
-      </Left>
-      <Center>
+        </SocialContainer> */}
+
         <Title>Useful Links</Title>
         <List>
           <ListItem>Home</ListItem>
@@ -122,10 +121,13 @@ const Footer = () => {
           <ListItem>Wishlist</ListItem>
           <ListItem>Wishlist</ListItem>
           <ListItem>Terms</ListItem>
-        </List>
+          </List>
+        </Left>
+      <Center>
+        
       </Center>
       <Right>
-        <Title>Contact</Title>
+        <Title>Contact Us</Title>
         <ContactItem>
           <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
         </ContactItem>

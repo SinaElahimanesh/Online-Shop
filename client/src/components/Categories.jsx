@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { categories } from "../data";
 import { mobile } from "../responsive";
 import CategoryItem from "./CategoryItem";
+import './categories.css';
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const Container = styled.div`
 
 const Categories = () => {
   return (
-    <Container>
+    <Container id="category">
       {categories.map((item) => (
         <CategoryItem item={item} key={item.id} />
       ))}

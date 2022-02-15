@@ -5,17 +5,22 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
 const Container = styled.div`
   height: 60px;
+  top: 0;
+  max-width: 100%;
+  overflow: hidden;
   ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  padding: 13px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #333;
   ${mobile({ padding: "10px 0px" })}
 `;
 
@@ -58,6 +63,7 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 50px;
   ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
@@ -69,37 +75,118 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
-  const quantity = useSelector(state=>state.cart.quantity)
+  const quantity = useSelector(state=>state.cart.quantity);
+  const toggle = document.querySelector(".toggle");
+const menu = document.querySelector(".menu");
+const items = document.querySelectorAll(".item");
+
+/* Toggle mobile menu */
+function toggleMenu() {
+  if (menu.classList.contains("active")) {
+    menu.classList.remove("active");
+    toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+  } else {
+    menu.classList.add("active");
+    toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+  }
+};
+
+/* Activate Submenu */
+function toggleItem() {
+  if (this.classList.contains("submenu-active")) {
+    this.classList.remove("submenu-active");
+  } else if (menu.querySelector(".submenu-active")) {
+    menu.querySelector(".submenu-active").classList.remove("submenu-active");
+    this.classList.add("submenu-active");
+  } else {
+    this.classList.add("submenu-active");
+  }
+};
+
+/* Close Submenu From Anywhere */
+function closeSubmenu(e) {
+  let isClickInside = menu.contains(e.target);
+
+  if (!isClickInside && menu.querySelector(".submenu-active")) {
+    menu.querySelector(".submenu-active").classList.remove("submenu-active");
+  }
+};
+/* Event Listeners */
+
+const func = (e) => {
+  toggle.addEventListener("click", toggleMenu, false);
+  for (let item of items) {
+    if (item.querySelector(".submenu")) {
+      item.addEventListener("click", toggleItem, false);
+    }
+    item.addEventListener("keypress", toggleItem, false);
+  }
+  document.addEventListener("click", closeSubmenu, false);
+};
   return (
-    <Container>
-      <Wrapper>
-        <Left>
-          <Language>EN</Language>
-          <SearchContainer>
-            <Input placeholder="Search" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
-        </Left>
-        <Center>
-          <Logo>LAMA.</Logo>
-        </Center>
-        <Right>
-         <Link to="/register">
-          <MenuItem>REGISTER</MenuItem>
-            </Link>
-           <Link to="/login">
-          <MenuItem>SIGN IN</MenuItem>
-           </Link>
-          <Link to="/cart">
-          <MenuItem>
-            <Badge badgeContent={quantity} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItem>
-          </Link>
-        </Right>
-      </Wrapper>
-    </Container>
+    // <Container className="container navbar navbar-expand-lg navbar-light bg-light">
+    //   <Wrapper className="wrapper">
+    //     <Left>
+    //       {/* <SearchContainer>
+    //         <Input placeholder="Search" />
+    //         <Search style={{ color: "gray", fontSize: 16 }} />
+    //       </SearchContainer> */}
+    //       <Link to="/cart" className="nav-item">
+    //         <MenuItem>
+    //           <Badge badgeContent={quantity} color="primary" className="cart">
+    //             <ShoppingCartOutlined />
+    //           </Badge>
+    //         </MenuItem>
+    //       </Link>
+    //     </Left>
+        
+    //     <Right>
+
+    //     <Link to="/contact" className="nav-item">
+    //       <MenuItem>CONTACT</MenuItem>
+    //     </Link>
+
+    //     <Link to="/category" className="nav-item">
+    //       <MenuItem>CATEGORY</MenuItem>
+    //     </Link>
+
+    //     <Link to="/login" className="nav-item">
+    //       <MenuItem>SIGN IN</MenuItem>
+    //     </Link>
+
+
+    //     <Link to="/" className="nav-item navbar-brand">
+    //       <MenuItem>Home</MenuItem>
+    //     </Link>
+
+    //     </Right>
+    //   </Wrapper>
+    // </Container>
+
+    <>
+    <nav>
+  <ul class="menu">
+    <li class="logo"><a href="/">POOSHA</a></li>
+    {/* <li class="item"><a href="#about">About</a></li> */}
+    {/* <li class="item has-submenu">
+      <a tabindex="0">Products</a>
+      <ul class="submenu">
+        <li class="subitem"><a href="#">Design</a></li>
+        <li class="subitem"><a href="#">Development</a></li>
+        <li class="subitem"><a href="#">SEO</a></li>
+        <li class="subitem"><a href="#">Copywriting</a></li>
+      </ul>
+    </li> */}
+    <li className="item"><a href="#category">Categories</a></li>
+    <li class="item"><a href="#about">About</a></li>
+    <li class="item"><a href="#contact">Contact</a>
+    </li>
+    <li class="item"><a href="/login">Log In</a></li>
+    <li class="item"><a href="/Register">Register</a></li>
+    <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+  </ul>
+</nav>
+    </>
   );
 };
 

@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
+import About from "../components/About";
 
 const Container = styled.div``;
 
@@ -155,7 +156,6 @@ const Product = () => {
   return (
     <Container>
       <Navbar />
-      <Announcement />
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
@@ -190,7 +190,7 @@ const Product = () => {
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-      <Newsletter />
+      <About />
       <Footer />
     </Container>
   );
