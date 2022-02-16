@@ -46,7 +46,7 @@ const Register = () => {
 		            	<button type="submit" className="form-control btn rounded submit px-3">Sign In</button>
 		            </div>
 		          </form>
-		          <p className="text-center">Already have an account? <Link to="/login" >Sign In</Link></p>
+		          <p className="text-center">Already have an account? <Link to="/login" >Sign Up</Link></p>
 		        </div>
 		      </div>
 				</div>
