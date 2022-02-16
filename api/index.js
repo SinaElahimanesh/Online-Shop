@@ -10,7 +10,10 @@ const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
-
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 mongoose
   .connect('mongodb://localhost:27017/admin') // process.env.MONGO_URL
