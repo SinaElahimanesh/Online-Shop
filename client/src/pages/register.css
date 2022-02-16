@@ -1,18 +1,18 @@
-.register, .login {
-    color: black;
-    margin: 25px;
-    margin: 5px 0px;
-    font-size: 12px;
-    text-decoration: none;
-    cursor: pointer;
-    position: relative;
-
+.login-wrap {
+    background-color: #ea4b1f;
+    margin-top: 2rem;
+    align-items: center;
+    border-radius: .5rem;
 }
 
-.register:hover , .login:hover{
+a:hover {
     color: #ea4;
 }
 
-.login {
-    background-size: cover;
+.btn {
+    width: 100%;
+}
+
+.wrap {
+    width: 100%;
 }
