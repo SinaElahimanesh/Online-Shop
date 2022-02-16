@@ -124,7 +124,11 @@ const Footer = () => {
           </List>
         </Left>
       <Center>
-        
+      <div class="col-md-10 col-md-6">
+      <iframe class="map relative-vertical-center" 
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12959.680768283184!2d51.3517227!3d35.7035815!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x61a5a909b878501!2sSharif%20University%20of%20Technology!5e0!3m2!1sen!2s!4v1645003775242!5m2!1sen!2s" 
+      width="100%" height="300" frameborder="0" style={{border:"0", height:"100%", borderRadius: ".34rem", margin: "30px", height: "200px"}} allowfullscreen="" ></iframe>
+          </div>
       </Center>
       <Right>
         <Title>Contact Us</Title>

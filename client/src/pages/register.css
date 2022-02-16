@@ -12,3 +12,7 @@
 .register:hover , .login:hover{
     color: #ea4;
 }
+
+.login {
+    background-size: cover;
+}
