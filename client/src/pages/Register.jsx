@@ -43,10 +43,10 @@ const Register = () => {
 			      			<input type="password" className="form-control" placeholder="Confirm Password" required />
 			      		</div>
 		            <div className="form-group">
-		            	<button type="submit" className="form-control btn rounded submit px-3">Sign In</button>
+		            	<button type="submit" className="form-control btn rounded submit px-3">Sign Up</button>
 		            </div>
 		          </form>
-		          <p className="text-center">Already have an account? <Link to="/login" >Sign Up</Link></p>
+		          <p className="text-center">Already have an account? <Link to="/login" >Sign In</Link></p>
 		        </div>
 		      </div>
 				</div>
