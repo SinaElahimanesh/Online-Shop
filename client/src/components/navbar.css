@@ -1,5 +1,5 @@
 :root {
-    --navItem: orange;
+    --navItem: #fff;
 }
 
  * {
@@ -31,6 +31,11 @@
   .logo {
     font-size: 20px;
     padding: 7.5px 10px 7.5px 0;
+    font-weight: 900;
+  }
+
+  .logo a {
+    color: var(--navItem);
   }
   .item {
     padding: 10px;
@@ -41,6 +46,10 @@
   .item:not(.button) a:hover,
   .item a:hover::after {
     color: #ccc;
+  }
+
+  .item a {
+    color: var(--navItem);
   }
 
   /* Mobile menu */
@@ -111,6 +120,9 @@
     }
     .logo {
       flex: 1;
+    }
+    .logo a:hover {
+      color: #fff;
     }
     .item.button {
       width: auto;

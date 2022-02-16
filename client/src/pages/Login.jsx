@@ -25,6 +25,7 @@ const Login = () => {
   
   return (
     <section className="ftco-section">
+		<Navbar />
 		<div classNameName="container">
 			<div className="row justify-content-center">
 				<div className="col-lg-4 col-md-12">
