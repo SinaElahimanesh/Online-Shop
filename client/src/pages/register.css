@@ -1,18 +1,50 @@
+section{
+    max-width: 100%;
+}
 .login-wrap {
-    background-color: #ea4b1f;
+    /* background-color: #ea4b1f; */
+    background-image: url(../img/model-anastasia-seliverstova-fashion-dior-calvin-klein-style-black-white.jpg);
+    background-size: cover;
+    overflow-y: hidden;
+    overflow-x: hidden;
     margin-top: 2rem;
     align-items: center;
     border-radius: .5rem;
+    margin: 15px;
+    /* color: #ea4f1b; */
+    font-weight: bolder;
+    margin-top: 10rem;
+}
+
+.login-wrap h3 {
+    color: #ea4f1b;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: #333 3px 1px;
+}
+
+.login-wrap p , a {
+    color: #ea4;
+    text-shadow: #111 1px 1px;
 }
 
 a:hover {
-    color: #ea4;
+    color: #ea4f1b;
 }
 
 .btn {
     width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ea4f1b;
+    text-shadow: #333 1px 1px;
 }
 
 .wrap {
     width: 100%;
+}
+
+.text-btn {
+    font-weight: 100;
 }

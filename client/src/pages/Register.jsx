@@ -3,12 +3,12 @@ import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { Link } from "react-router-dom";
 import "./register.css";
-import { Background } from "../img/female-model-shooting-guide.jpg";
 
 
 const Register = () => {
   return (
     <section className="ftco-section">
+                  <Navbar />
 		<div classNameName="container">
 			<div className="row justify-content-center">
 				<div className="col-lg-4 col-md-3">
@@ -46,7 +46,7 @@ const Register = () => {
 		            	<button type="submit" className="form-control btn rounded submit px-3">Sign In</button>
 		            </div>
 		          </form>
-		          <p className="text-center">Already have an account? <Link to="/login">Sign In</Link></p>
+		          <p className="text-center">Already have an account? <Link to="/login" >Sign In</Link></p>
 		        </div>
 		      </div>
 				</div>
