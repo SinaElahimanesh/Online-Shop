@@ -13,6 +13,8 @@ import { mobile } from "../responsive";
 const Container = styled.div`
   display: flex;
   font-family: 'A Iranian Sans';
+  padding-left: 10%;
+  padding-right: 10%;
   ${mobile({ flexDirection: "column" })}
 `;
 
