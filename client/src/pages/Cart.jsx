@@ -276,16 +276,16 @@ const Cart = () => {
               <SummaryItemPrice>{cart.total} تومان</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
-              name="Lama Shop"
-              image="https://avatars.githubusercontent.com/u/1486366?v=4"
+              name="Poosha"
+              image=""
               billingAddress
               shippingAddress
-              description={`Your total is $${cart.total}`}
+              description={`مجوع خرید شما ${cart.total} تومان`}
               amount={cart.total * 100}
               token={onToken}
               stripeKey={KEY}
             >
-              <Button className="custom-btn btn-3"><span style={{fontFamily: 'A Iranian Sans'}}>مشاهده سایر کالا ها</span></Button>
+              <Button className="custom-btn btn-3"><span style={{fontFamily: 'A Iranian Sans'}}>نهایی کردن خرید</span></Button>
             </StripeCheckout>
           </Summary>
         </Bottom>
