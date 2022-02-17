@@ -9,12 +9,15 @@ import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import About from "../components/About";
+import '../components/slider.css';
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+  padding-top: 7rem;
+  direction: rtl;
   ${mobile({ padding: "10px", flexDirection: "column" })}
 `;
 
@@ -45,7 +48,8 @@ const Desc = styled.p`
 
 const Price = styled.span`
   font-weight: 100;
-  font-size: 40px;
+  font-size: 20px;
+  font-family: 'A Iranian Sans';
 `;
 
 const FilterContainer = styled.div`
@@ -63,6 +67,8 @@ const Filter = styled.div`
 
 const FilterTitle = styled.span`
   font-size: 20px;
+  font-family: 'A Iranian Sans';
+  padding: 8px;
   font-weight: 200;
 `;
 
@@ -78,6 +84,7 @@ const FilterColor = styled.div`
 const FilterSize = styled.select`
   margin-left: 10px;
   padding: 5px;
+  border-radius: .1rem;
 `;
 
 const FilterSizeOption = styled.option``;
@@ -100,7 +107,7 @@ const Amount = styled.span`
   width: 30px;
   height: 30px;
   border-radius: 10px;
-  border: 1px solid teal;
+  border: 1px solid #ea4f1b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,15 +115,12 @@ const Amount = styled.span`
 `;
 
 const Button = styled.button`
-  padding: 15px;
-  border: 2px solid teal;
+  padding: 0px;
   background-color: white;
   cursor: pointer;
   font-weight: 500;
 
-  &:hover {
-    background-color: #f8f4f4;
-  }
+ 
 `;
 
 const Product = () => {
@@ -161,16 +165,16 @@ const Product = () => {
         <InfoContainer>
           <Title>{product.title}</Title>
           <Desc>{product.desc}</Desc>
-          <Price>$ {product.price}</Price>
+          <Price>{product.price} تومان</Price>
           <FilterContainer>
             <Filter>
-              <FilterTitle>Color</FilterTitle>
+              <FilterTitle>رنگ</FilterTitle>
               {product.color?.map((c) => (
                 <FilterColor color={c} key={c} onClick={() => setColor(c)} />
               ))}
             </Filter>
             <Filter>
-              <FilterTitle>Size</FilterTitle>
+              <FilterTitle>سایز</FilterTitle>
               <FilterSize onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>
@@ -184,7 +188,7 @@ const Product = () => {
               <Amount>{quantity}</Amount>
               <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button onClick={handleClick}>ADD TO CART</Button>
+            <Button onClick={handleClick}className="custom-btn btn-3"><span style={{ fontFamily: "A Iranian Sans"}}>افزودن به سبد خرید</span></Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
