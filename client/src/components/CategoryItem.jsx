@@ -28,11 +28,15 @@ const Info = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'A Iranian Sans';
+
 `;
 
 const Title = styled.h1`
     color:white;
     margin-bottom: 20px;
+    font-family: 'A Iranian Sans';
+
 `;
 
 const CategoryItem = ({ item }) => {
@@ -42,7 +46,6 @@ const CategoryItem = ({ item }) => {
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        {/* <Button>SHOP NOW</Button> */}
         <Button title = "مشاهده کالا"/>
 
       </Info>

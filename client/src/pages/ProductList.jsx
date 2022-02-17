@@ -42,7 +42,7 @@ const FilterText = styled.span`
 const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
-  border-radius: .3rem;
+  border-radius: .9rem;
   font-family: 'A Iranian Sans';
   font-size: 13px;
   ${mobile({ margin: "10px 0px" })}

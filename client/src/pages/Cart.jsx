@@ -255,7 +255,7 @@ const Cart = () => {
               token={onToken}
               stripeKey={KEY}
             >
-              <Button>CHECKOUT NOW</Button>
+              <Button>تکمیل خرید</Button>
             </StripeCheckout>
           </Summary>
         </Bottom>
