@@ -61,7 +61,8 @@
   }
   .menu li a {
     display: block;
-    padding: 15px 0px;
+    padding: 5px 0px 0px 0px;
+    font-family: 'A Iranian Sans';
   }
   .menu li.subitem a {
     padding: 15px;

@@ -167,22 +167,11 @@ const func = (e) => {
     <nav>
   <ul class="menu">
     <li class="logo"><a href="/">Poosha</a></li>
-    {/* <li class="item"><a href="#about">About</a></li> */}
-    {/* <li class="item has-submenu">
-      <a tabindex="0">Products</a>
-      <ul class="submenu">
-        <li class="subitem"><a href="#">Design</a></li>
-        <li class="subitem"><a href="#">Development</a></li>
-        <li class="subitem"><a href="#">SEO</a></li>
-        <li class="subitem"><a href="#">Copywriting</a></li>
-      </ul>
-    </li> */}
-    <li className="item"><a href="#category">Categories</a></li>
-    <li class="item"><a href="#about">About</a></li>
-    <li class="item"><a href="#contact">Contact</a>
-    </li>
-    <li class="item"><a href="/login">Log In</a></li>
-    <li class="item"><a href="/Register">Register</a></li>
+    <li class="item"><a href="#contact">درباره ما</a></li>
+    <li class="item"><a href="#contact">تماس با ما</a></li>
+    <li className="item"><a href="#category">دسته بندی ها</a></li>
+    <li class="item"><a href="/login">ورود</a></li>
+    <li class="item"><a href="/Register">ثبت نام</a></li>
     <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
   </ul>
 </nav>

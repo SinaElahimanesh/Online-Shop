@@ -76,7 +76,6 @@ const Desc = styled.p`
   margin: 50px 0px;
   font-size: 20px;
   font-weight: 500;
-  letter-spacing: 3px;
   color: #666;
 `;
 
@@ -105,7 +104,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <button className="slider-btn">Shop Now</button>
+              <button className="slider-btn">خرید کنید</button>
             </InfoContainer>
             
           </Slide>

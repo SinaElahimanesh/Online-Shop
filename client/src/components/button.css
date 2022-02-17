@@ -4,7 +4,7 @@
     --light-theme: #fff;
 }
 body {
-    font-family: "Mulish", sans-serif;
+    font-family: 'A Iranian Sans';
     background-color: var(--background-color);
     color: var(--light-theme);
 }
@@ -43,6 +43,8 @@ body {
 }
 .shop-now {
     position: relative;
+    font-family: 'A Iranian Sans';
+
 }
 .shop-now .santa-icon {
     position: absolute;
@@ -149,6 +151,6 @@ body {
 }
 @keyframes flash {
     50% {
-        border-color: #485563;
+        border-color: #ea4b1f;
    }
 }
