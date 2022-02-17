@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
-import About from "../components/About";
 
 const Container = styled.div``;
 

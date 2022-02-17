@@ -1,11 +1,11 @@
 import React from 'react'
 import "./button.css";
 
-const Button = () => {
+const Button = (props) => {
   return (
     <div class="container">
    <div class="btn">
-      <div class="shop-now">خرید کنید</div>
+      <div class="shop-now">{props.title}</div>
       <div class="snowflake-grid to-left">
          <div class="snowflake-item border-bottom border-right">
             <div class="sub-items border-right border-bottom pull-down">

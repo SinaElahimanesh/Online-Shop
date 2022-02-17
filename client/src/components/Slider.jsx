@@ -104,7 +104,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <button className="slider-btn">خرید کنید</button>
+              <button className="custom-btn btn-3"><span style={{ fontFamily: "A Iranian Sans"}}>خرید کنید</span></button>
             </InfoContainer>
             
           </Slide>

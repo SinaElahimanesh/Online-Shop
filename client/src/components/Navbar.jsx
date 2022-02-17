@@ -169,7 +169,7 @@ const func = (e) => {
     <li class="logo"><a href="/">Poosha</a></li>
     <li class="item"><a href="#contact">درباره ما</a></li>
     <li class="item"><a href="#contact">تماس با ما</a></li>
-    <li className="item"><a href="#category">دسته بندی ها</a></li>
+    <li className="item"><a href="#category">دسته بندی</a></li>
     <li class="item"><a href="/login">ورود</a></li>
     <li class="item"><a href="/Register">ثبت نام</a></li>
     <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>

@@ -5,11 +5,12 @@ import Footer from "../components/Footer";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router";
 import { useState } from "react";
-import About from "../components/About";
 
-const Container = styled.div``;
+const Container = styled.div`
+`;
 
 const Wrapper = styled.div`
+  direction: rtl;
   padding-top: 5.7rem;
   ${mobile({ padding: "10px", flexDirection: "column" })}
 `;
@@ -32,16 +33,22 @@ const FilterText = styled.span`
   font-size: 20px;
   font-weight: 600;
   margin-right: 20px;
+  font-family: 'A Iranian Sans';
   ${mobile({ marginRight: "0px" })}
 `;
 
 const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
-  border-radius: 1rem;
+  border-radius: .3rem;
+  font-family: 'A Iranian Sans';
+  font-size: 13px;
   ${mobile({ margin: "10px 0px" })}
 `;
-const Option = styled.option``;
+const Option = styled.option`
+font-family: 'A Iranian Sans';
+font-size: 13px;
+`;
 
 const ProductList = () => {
   const location = useLocation();
@@ -64,18 +71,18 @@ const ProductList = () => {
         <Title>{cat}</Title>
         <FilterContainer>
           <Filter>
-            <FilterText>Filter Products:</FilterText>
+            <FilterText>فیلتر:</FilterText>
             <Select name="color" onChange={handleFilters}>
-              <Option disabled>Color</Option>
-              <Option>white</Option>
-              <Option>black</Option>
-              <Option>red</Option>
-              <Option>blue</Option>
-              <Option>yellow</Option>
-              <Option>green</Option>
+              <Option disabled>رنگ</Option>
+              <Option>سفید</Option>
+              <Option>مشکی</Option>
+              <Option>قرمز</Option>
+              <Option>آبی</Option>
+              <Option>زرد</Option>
+              <Option>سبز</Option>
             </Select>
             <Select name="size" onChange={handleFilters}>
-              <Option disabled>Size</Option>
+              <Option disabled>سایز</Option>
               <Option>XS</Option>
               <Option>S</Option>
               <Option>M</Option>
@@ -84,11 +91,11 @@ const ProductList = () => {
             </Select>
           </Filter>
           <Filter>
-            <FilterText>Sort Products:</FilterText>
+            <FilterText>مرتب سازی</FilterText>
             <Select onChange={(e) => setSort(e.target.value)}>
-              <Option value="newest">Newest</Option>
-              <Option value="asc">Price (asc)</Option>
-              <Option value="desc">Price (desc)</Option>
+              <Option value="newest">جدیدترین</Option>
+              <Option value="asc">ارزانترین</Option>
+              <Option value="desc">گرانترین</Option>
             </Select>
           </Filter>
         </FilterContainer>

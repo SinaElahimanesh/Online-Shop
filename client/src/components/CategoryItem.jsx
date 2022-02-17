@@ -43,7 +43,7 @@ const CategoryItem = ({ item }) => {
       <Info>
         <Title>{item.title}</Title>
         {/* <Button>SHOP NOW</Button> */}
-        <Button />
+        <Button title = "مشاهده کالا"/>
 
       </Info>
       </Link>
