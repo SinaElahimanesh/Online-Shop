@@ -4,6 +4,7 @@ section{
 .login-wrap {
     /* background-color: #ea4b1f; */
     background-image: url(../img/model-anastasia-seliverstova-fashion-dior-calvin-klein-style-black-white.jpg);
+    background-image: url(../img/model-anastasia-seliverstova-fashion-dior-calvin-klein-style-black-white.jpg), linear-gradient(#eb01a5, #d13531);;   
     background-size: cover;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -15,6 +16,7 @@ section{
     font-weight: bolder;
     margin-top: 10rem;
 }
+
 
 .login-wrap h3 {
     color: #ea4f1b;
