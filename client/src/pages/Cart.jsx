@@ -8,19 +8,24 @@ import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
+import "../components/slider.css";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
+  direction: rtl;
   padding: 20px;
+  padding-top: 7rem;
   ${mobile({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
   font-weight: 300;
   text-align: center;
+  font-family: 'A Iranian Sans';
+
 `;
 
 const Top = styled.div`
@@ -31,9 +36,12 @@ const Top = styled.div`
 `;
 
 const TopButton = styled.button`
-  padding: 10px;
+  padding: 0px;
   font-weight: 600;
   cursor: pointer;
+  color: #fff;
+  font-family: 'A Iranian Sans';
+  width: 13rem;
   border: ${(props) => props.type === "filled" && "none"};
   background-color: ${(props) =>
     props.type === "filled" ? "black" : "transparent"};
@@ -52,22 +60,26 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  font-family: 'A Iranian Sans';
   ${mobile({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`
   flex: 3;
+  font-family: 'A Iranian Sans';
 `;
 
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  font-family: 'A Iranian Sans';
   ${mobile({ flexDirection: "column" })}
 `;
 
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  font-family: 'A Iranian Sans';
 `;
 
 const Image = styled.img`
@@ -79,13 +91,18 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  font-family: 'A Iranian Sans';
 `;
 
-const ProductName = styled.span``;
+const ProductName = styled.span`
+  font-family: 'A Iranian Sans';
+
+`;
 
 const ProductId = styled.span``;
 
 const ProductColor = styled.div`
+font-family: 'A Iranian Sans';
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -100,6 +117,8 @@ const PriceDetail = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'A Iranian Sans';
+
 `;
 
 const ProductAmountContainer = styled.div`
@@ -127,35 +146,51 @@ const Hr = styled.hr`
 `;
 
 const Summary = styled.div`
+  font-family: 'A Iranian Sans';
   flex: 1;
-  border: 0.5px solid lightgray;
+  // border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 50vh;
+  height: 60vh;
+  background-color: #2e2e2e;
+  box-shadow: #aaa 1px 1px 4px;
 `;
 
 const SummaryTitle = styled.h1`
   font-weight: 200;
+  font-family: 'A Iranian Sans';
+  font-size: 24px;
+  text-align: center;
+
 `;
 
 const SummaryItem = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
+  font-family: 'A Iranian Sans';
+  font-size: 18px;
   font-weight: ${(props) => props.type === "total" && "500"};
   font-size: ${(props) => props.type === "total" && "24px"};
 `;
 
-const SummaryItemText = styled.span``;
+const SummaryItemText = styled.span`
+  font-family: 'A Iranian Sans';
+  font-size: 15px;
+
+`;
 
 const SummaryItemPrice = styled.span``;
 
 const Button = styled.button`
   width: 100%;
-  padding: 10px;
+  padding: 0px;
   background-color: black;
   color: white;
   font-weight: 600;
+  margin-top: 17px;
+  font-family: 'A Iranian Sans';
+
 `;
 
 const Cart = () => {
@@ -185,14 +220,10 @@ const Cart = () => {
     <Container>
       <Navbar />
       <Wrapper>
-        <Title>YOUR BAG</Title>
+        <Title>سبد خرید</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
-          <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
-            <TopText>Your Wishlist (0)</TopText>
-          </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          <TopButton className="custom-btn btn-3" ><span style={{fontFamily: 'A Iranian Sans'}}>مشاهده سایر کالا ها</span></TopButton>
+          {/* <TopButton type="filled">CHECKOUT NOW</TopButton> */}
         </Top>
         <Bottom>
           <Info>
@@ -225,25 +256,24 @@ const Cart = () => {
                 </PriceDetail>
               </Product>
             ))}
-            <Hr />
           </Info>
           <Summary>
-            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummaryTitle>سفارش شما</SummaryTitle>
             <SummaryItem>
-              <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemText>قیمت</SummaryItemText>
+              <SummaryItemPrice> {cart.total} تومان</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+              <SummaryItemText>قابل پرداخت</SummaryItemText>
+              <SummaryItemPrice>0 <span>تومان</span></SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+              <SummaryItemText>تخفیف</SummaryItemText>
+              <SummaryItemPrice>0 <span>تومان</span></SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
-              <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemText>مجموع</SummaryItemText>
+              <SummaryItemPrice>{cart.total} تومان</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
               name="Lama Shop"
@@ -255,7 +285,7 @@ const Cart = () => {
               token={onToken}
               stripeKey={KEY}
             >
-              <Button>تکمیل خرید</Button>
+              <Button className="custom-btn btn-3"><span style={{fontFamily: 'A Iranian Sans'}}>مشاهده سایر کالا ها</span></Button>
             </StripeCheckout>
           </Summary>
         </Bottom>

@@ -6,6 +6,7 @@ import { mobile } from "../responsive";
 import { useLocation } from "react-router";
 import { useState } from "react";
 import About from "../components/About";
+import Product from "../components/Product";
 
 const Container = styled.div`
 `;
@@ -102,6 +103,7 @@ const ProductList = () => {
           </Filter>
         </FilterContainer>
         <Products cat={cat} filters={filters} sort={sort} />
+        <Product />
         <hr />
         <About />
         <hr />
