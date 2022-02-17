@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from "'../../react-icons/ai"
 import "./navbar.css";
 
 const Container = styled.div`
@@ -124,59 +125,20 @@ const func = (e) => {
   document.addEventListener("click", closeSubmenu, false);
 };
   return (
-    // <Container className="container navbar navbar-expand-lg navbar-light bg-light">
-    //   <Wrapper className="wrapper">
-    //     <Left>
-    //       {/* <SearchContainer>
-    //         <Input placeholder="Search" />
-    //         <Search style={{ color: "gray", fontSize: 16 }} />
-    //       </SearchContainer> */}
-    //       <Link to="/cart" className="nav-item">
-    //         <MenuItem>
-    //           <Badge badgeContent={quantity} color="primary" className="cart">
-    //             <ShoppingCartOutlined />
-    //           </Badge>
-    //         </MenuItem>
-    //       </Link>
-    //     </Left>
-        
-    //     <Right>
 
-    //     <Link to="/contact" className="nav-item">
-    //       <MenuItem>CONTACT</MenuItem>
-    //     </Link>
-
-    //     <Link to="/category" className="nav-item">
-    //       <MenuItem>CATEGORY</MenuItem>
-    //     </Link>
-
-    //     <Link to="/login" className="nav-item">
-    //       <MenuItem>SIGN IN</MenuItem>
-    //     </Link>
-
-
-    //     <Link to="/" className="nav-item navbar-brand">
-    //       <MenuItem>Home</MenuItem>
-    //     </Link>
-
-    //     </Right>
-    //   </Wrapper>
-    // </Container>
-
-    <>
     <nav>
-  <ul class="menu">
-    <li class="logo"><a href="/">Poosha</a></li>
-    <li class="item"><a href="#about">چرا پوشا؟</a></li>
-    <li class="item"><a href="#gallery">گالری</a></li>
-    <li class="item"><a href="#contact">تماس با ما</a></li>
-    <li className="item"><a href="#category">دسته بندی</a></li>
-    <li class="item"><a href="/login">ورود</a></li>
-    <li class="item"><a href="/Register">ثبت نام</a></li>
-    <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
-  </ul>
-</nav>
-    </>
+      <ul class="menu">
+        <Link to="/cart" style={{color: '#fff'}}><li class="item cart"><AiOutlineShoppingCart /></li></Link>
+        <li class="logo"><a href="/">Poosha</a></li>
+        <li class="item"><a href="#about">چرا پوشا؟</a></li>
+        <li class="item"><a href="#gallery">گالری</a></li>
+        <li class="item"><a href="#contact">تماس با ما</a></li>
+        <li className="item"><a href="#category">دسته بندی</a></li>
+        <li class="item"><a href="/login">ورود</a></li>
+        <li class="item"><a href="/Register">ثبت نام</a></li>
+        <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+    </nav>
   );
 };
 
