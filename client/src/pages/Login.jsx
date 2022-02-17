@@ -20,7 +20,7 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    login(dispatch, { username, password });
+    login(dispatch, { username, password }, "/auth/login");
   };
   
   return (
