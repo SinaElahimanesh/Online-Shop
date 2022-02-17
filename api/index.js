@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 mongoose
-  .connect('mongodb://localhost:27017/admin') // process.env.MONGO_URL
+  .connect('mongodb://localhost:27017/') // process.env.MONGO_URL
   .then(() => console.log("DB Connection Successfull!"))
   .catch((err) => {
     console.log(err);

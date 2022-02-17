@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let data = [];
+
+      var _table_ = document.createElement("table"),
+        _tr_ = document.createElement("tr"),
+        _th_ = document.createElement("th"),
+        _td_ = document.createElement("td");
+
+      function buildHtmlTable(arr) {
+        var table = _table_.cloneNode(false),
+          columns = addAllColumnHeaders(arr, table);
+        for (var i = 0, maxi = arr.length; i < maxi; ++i) {
+          var tr = _tr_.cloneNode(false);
+          for (var j = 0, maxj = columns.length; j < maxj; ++j) {
+            var td = _td_.cloneNode(false);
+            cellValue = arr[i][columns[j]];
+            td.appendChild(document.createTextNode(arr[i][columns[j]] || ""));
+            tr.appendChild(td);
+          }
+          table.appendChild(tr);
+        }
+        return table;
+      }
+
+      function addAllColumnHeaders(arr, table) {
+        var columnSet = [],
+          tr = _tr_.cloneNode(false);
+        for (var i = 0, l = arr.length; i < l; i++) {
+          for (var key in arr[i]) {
+            if (arr[i].hasOwnProperty(key) && columnSet.indexOf(key) === -1) {
+              columnSet.push(key);
+              var th = _th_.cloneNode(false);
+              th.appendChild(document.createTextNode(key));
+              th.setAttribute("keyname", key)
+              th.onclick = function() {
+                let key = this.getAttribute("keyname");
+                data.sort(function(a, b) {
+                  if (a[key] - b[key] == NaN) return a[key].localeCompare(b[key]);
+                  return a[key] - b[key];
+                });
+                let element = document.getElementById("table-container");
+                element.innerHTML = "";
+                element.appendChild(
+                  buildHtmlTable(data)
+                );
+              };
+              tr.appendChild(th);
+            }
+          }
+        }
+        table.appendChild(tr);
+        return columnSet;
+      }
+
+      const fields = {
+        address: ["customerid", "city", "street", "moreaddress", "postalcode"],
+        brand: ["brandid", "brandname", "fileurl"],
+        cart: ["customerid"],
+        category: ["categoryid", "categoryname", "parent"],
+        comment: [
+          "commentid",
+          "title",
+          "description",
+          "ratingscore",
+          "status",
+          "productid",
+          "customerid",
+        ],
+        courier: ["courierid"],
+        couriercity: ["courierid", "possiblecity"],
+        customer: ["customerid", "birthdate"],
+        orders: [
+          "customerid",
+          "dateadded",
+          "status",
+          "preferreddeliverytime",
+          "actualdeliverytime",
+          "courierid",
+          "city",
+          "street",
+          "moreaddress",
+          "postalcode",
+        ],
+        product: [
+          "id",
+          "title",
+          "desc",
+          "img",
+          "price",
+        ],
+        productcategory: ["barcode", "categoryid"],
+        productincart: ["barcode", "customerid", "productcount"],
+        productinorder: ["barcode", "customerid", "dateadded", "productcount"],
+        productpic: ["barcode", "picurl"],
+        userphone: ["userid", "phone"],
+        users: ["userid", "email", "hashedpassword", "firstname", "lastname"],
+        wallet: ["customerid", "balance"],
+      };
+
+      async function submitQuery() {}
+
+      async function insertQuery() {
+        const table = prompt("Enter table name");
+        let values = {};
+        for (let field of fields[table]) {
+          if(field != 'id') {
+             values[field] = prompt(`Enter ${field}`);
+          }
+        }
+        fetch("http://localhost:5001/api/products", {
+          method: "POST",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            table: table,
+            values: values,
+          }),
+        })
+          .then((res) => {
+            return res.text();
+          })
+          .then((res) => {
+            document.getElementById("json").textContent = res;
+          });
+      }
+
+      async function selectQuery() {
+        const table = prompt("Enter table name");
+        fetch("http://localhost:5001/api/products/", {
+          method: "GET",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          // body: JSON.stringify({
+          //   table: table,
+          // }),
+        })
+          .then((res) => {
+            return res.text();
+          })
+          .then((res) => {
+            data = JSON.parse(res);
+            document.getElementById("json").textContent = JSON.stringify(
+              data,
+              null,
+              2
+            );
+
+            let element = document.getElementById("table-container");
+            element.innerHTML = "";
+            element.appendChild(
+              buildHtmlTable(data)
+            );
+          });
+      }
+
+      async function updateQuery() {
+        const table = prompt("Enter table name");
+        let setDict = {},
+          whereDict = {};
+        for (let field of fields[table]) {
+          let promptResult = prompt(
+            `SET ${field} - Enter - for ignore and others for setting an exact value`
+          );
+          if (promptResult != "-") {
+            setDict[field] = promptResult;
+          }
+        }
+        // for (let field of fields[table]) {
+        //   let promptResult = prompt(
+        //     `WHERE ${field} - Enter - for exclude and others for exact value`
+        //   );
+        //   if (promptResult != "-") {
+        //     whereDict[field] = promptResult;
+        //   }
+        // }
+        fetch("http://localhost:5001/api/products/" + setDict['id'], {
+          method: "PUT",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            table: table,
+            setDict: setDict,
+            whereDict: whereDict,
+          }),
+        })
+          .then((res) => {
+            return res.text();
+          })
+          .then((res) => {
+            document.getElementById("json").textContent = res;
+          });
+      }
+
+      async function deleteQuery() {
+        const table = prompt("Enter table name");
+        let whereDict = {};
+        // for (let field of fields[table]) {
+        //   let promptResult = prompt(
+        //     `WHERE ${field} - Enter - for exclude and others for exact value`
+        //   );
+        //   if (promptResult != "-") {
+        //     whereDict[field] = promptResult;
+        //   }
+        // }
+         let promptResult = prompt(
+            `Please Enter the id`
+          );
+          whereDict['id'] = promptResult;
+        fetch("http://localhost:5001/api/products/" + whereDict['id'], {
+          method: "DELETE",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          // body: JSON.stringify({
+          //   table: table,
+          //   whereDict: whereDict,
+          // }),
+        })
+          .then((res) => {
+            return res.text();
+          })
+          .then((res) => {
+            document.getElementById("json").textContent = res;
+          });
+      }
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#" style="vertical-align: middle">
+          <img
+            src="images/logo_black.png"
+            width="100"
+            height="50"
+            class="d-inline-block align-top logoImage"
+            alt=""
+            style="margin-right: 15px"
+          />
+          Poosha Seller Page
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                  </ul>
+                </div> -->
+      </nav>
+    </nav>
+    <div class="container">
+      <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+      <input value="Insert" readonly class="btn btn-primary marginer" onclick="insertQuery()" />
+      <input value="Select" readonly class="btn btn-primary marginer" onclick="selectQuery()" />
+      <input value="Delete" readonly class="btn btn-primary marginer" onclick="deleteQuery()" />
+      <input value="Update" readonly class="btn btn-primary marginer" onclick="updateQuery()" />
+    </div>
+      <br /><br />
+      <!-- <h3 style="padding-bottom: 30px;">Please input your query to request to the database and the result will be shown here!</h3> -->
+      <!-- <form>
+        <div class="form-group">
+          <label for="InputQuery">Unsafe Input Query</label>
+          <input
+            type="text"
+            class="form-control"
+            id="InputQuery"
+            aria-describedby="queryHelp"
+            placeholder="Enter SQL query"
+          />
+        </div>
+        <input value="Submit" class="btn btn-primary" onclick="insertQuery()">
+      </form> -->
+      <div id="table-container">
+
+      </div>
+      <h5 style="padding-top: 50px">Result:</h5>
+      <pre id="json"></pre>
+    </div>
+  </body>
+
+
+
+  <footer class="footer">
+    <!-- navbar-dark bg-dark -->
+    <div>
+      <small style="color: grey">2022, </small><small>Web Programming Project</small
+      ><small style="color: grey"> Designed By </small
+      ><small>
+        Sina Elahimanesh, Sara Zahedi.</small
+      >
+    </div>
+  </footer>
+</html>

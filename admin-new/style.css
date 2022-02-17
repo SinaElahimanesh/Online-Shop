@@ -1,0 +1,77 @@
+.container {
+  width: 100%;
+  padding: 6%;
+  margin: auto;
+  margin-top: -60px;
+}
+
+.marginer {
+    margin: 0.5rem;
+}
+
+body {
+  background-color: #e3f2fd;
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  background-color: #c0c0c0;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.logoImage {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 50%;
+  padding: auto;
+  text-align: center;
+}
+
+.contactFooter {
+  width: 22%;
+}
+
+table {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  overflow: scroll;
+  max-width: 100%;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #d5e5e9;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #007bff;
+  color: white;
+}
