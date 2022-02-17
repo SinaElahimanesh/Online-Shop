@@ -64,12 +64,15 @@ const Image = styled.img`
 
 const InfoContainer = styled.div`
   flex: 1;
-  padding: 1em;
+  padding: 1.4em;
 `;
 
 const Title = styled.h1`
   font-size: 70px;
   color: #333;
+  text-align: center;
+  font-family: 'A Iranian Sans';
+  padding: 10px;
 `;
 
 const Desc = styled.p`
@@ -77,6 +80,7 @@ const Desc = styled.p`
   font-size: 20px;
   font-weight: 500;
   color: #666;
+  text-align: center;
 `;
 
 
@@ -104,7 +108,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <button className="custom-btn btn-3"><span style={{ fontFamily: "A Iranian Sans"}}>خرید کنید</span></button>
+              {/* <button className="custom-btn btn-3"><span style={{ fontFamily: "A Iranian Sans"}}>خرید کنید</span></button> */}
             </InfoContainer>
             
           </Slide>

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { AiOutlineShoppingCart } from "'../../react-icons/ai"
+import { AiOutlineShoppingCart, AiOutlineHome } from "'../../react-icons/ai"
 import "./navbar.css";
 
 const Container = styled.div`

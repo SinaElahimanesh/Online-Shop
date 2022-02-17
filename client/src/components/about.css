@@ -1,7 +1,10 @@
 .about {
-    padding: 6rem;
     text-align: center;
     direction: rtl;
+}
+
+.content {
+    padding: 7em;
 }
 .about h1, p {
     direction: rtl;

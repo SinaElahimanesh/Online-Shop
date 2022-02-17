@@ -155,6 +155,8 @@
     }
     .logo {
       order: 0;
+      margin-top: .5rem;
+      margin-bottom: -.2rem;
     }
     .item {
       order: 1;
@@ -162,6 +164,8 @@
       display: block;
       width: auto;
       font-weight: 200;
+      margin-top: .5rem;
+      margin-bottom: -.2rem;
     }
     .button {
       order: 2;
