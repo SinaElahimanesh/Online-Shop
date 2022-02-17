@@ -3,10 +3,31 @@
 }
 
 .slider-btn {
-    margin-top: -500px;
     padding: 10px;
     font-size: 20px;
     background-color: transparent;
     cursor: pointer;
     margin-bottom: 40px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba(75, 48, 18, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 67%;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ea4f1b;
+    text-shadow: #000 .7px .5px 1px;
+    font-family: 'A Iranian Sans';
 }
+
+.slider-btn:hover {
+    transform: translateX(5px) translateY(-7px);
+    background-color: #ea4f1b;
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+
+}
+

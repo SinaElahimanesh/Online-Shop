@@ -260,6 +260,7 @@ const Cart = () => {
           </Summary>
         </Bottom>
       </Wrapper>
+      <hr></hr>
       <Footer />
     </Container>
   );

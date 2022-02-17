@@ -5,7 +5,7 @@ const Button = () => {
   return (
     <div class="container">
    <div class="btn">
-      <div class="shop-now">Shop now</div>
+      <div class="shop-now">خرید کنید</div>
       <div class="snowflake-grid to-left">
          <div class="snowflake-item border-bottom border-right">
             <div class="sub-items border-right border-bottom pull-down">

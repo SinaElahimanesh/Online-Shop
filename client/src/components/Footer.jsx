@@ -12,6 +12,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  font-family: 'A Iranian Sans';
   ${mobile({ flexDirection: "column" })}
 `;
 
@@ -20,16 +21,7 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-`;
-
-const Logo = styled.h1``;
-
-const Desc = styled.p`
-  margin: 20px 0px;
-`;
-
-const SocialContainer = styled.div`
-  display: flex;
+  font-family: 'A Iranian Sans';
 `;
 
 const SocialIcon = styled.div`
@@ -52,25 +44,17 @@ const Center = styled.div`
 
 const Title = styled.h3`
   margin-bottom: 30px;
-`;
+  text-align: center;
+  font-family: 'A Iranian Sans';
 
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const ListItem = styled.li`
-  width: 50%;
-  margin-bottom: 10px;
 `;
 
 const Right = styled.div`
+  direction: rtl;
   flex: 1;
   padding: 20px;
-  ${mobile({ backgroundColor: "#fff8f8" })}
+  font-family: 'A Iranian Sans';
+  // ${mobile({ backgroundColor: "#fff8f8" })}
 
 `;
 
@@ -78,70 +62,38 @@ const ContactItem = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-`;
-
-const Payment = styled.img`
-    width: 50%;
+  font-family: 'A Iranian Sans';
 `;
 
 const Footer = () => {
   return (
     <Container id="contact">
       <Left>
-        {/* <Logo>LAMA.</Logo>
-        <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
-        </Desc>
-        <SocialContainer>
-          <SocialIcon color="3B5999">
-            <Facebook />
-          </SocialIcon>
-          <SocialIcon color="E4405F">
-            <Instagram />
-          </SocialIcon>
-          <SocialIcon color="55ACEE">
-            <Twitter />
-          </SocialIcon>
-          <SocialIcon color="E60023">
-            <Pinterest />
-          </SocialIcon>
-        </SocialContainer> */}
-
-        <Title>Useful Links</Title>
-        <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Man Fashion</ListItem>
-          <ListItem>Woman Fashion</ListItem>
-          <ListItem>Accessories</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
-          </List>
+        <Title>تماس با ما</Title>
+        <ContactItem>
+          <Room style={{marginRight:"10px"}}/> دانشگاه صنتی شریف
+        </ContactItem>
+        <ContactItem>
+          <Phone style={{marginRight:"10px"}}/> 021 12345678
+        </ContactItem>
+        <ContactItem>
+          <MailOutline style={{marginRight:"10px"}} /> contact@webdev.dev
+        </ContactItem>
         </Left>
       <Center>
       <div class="col-md-10 col-md-6">
-      <iframe class="map relative-vertical-center" 
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12959.680768283184!2d51.3517227!3d35.7035815!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x61a5a909b878501!2sSharif%20University%20of%20Technology!5e0!3m2!1sen!2s!4v1645003775242!5m2!1sen!2s" 
-      width="100%" height="300" frameborder="0" style={{border:"0", height:"100%", borderRadius: ".34rem", margin: "30px", height: "200px"}} allowfullscreen="" ></iframe>
-          </div>
+        <iframe 
+          class="map relative-vertical-center" 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12959.680768283184!2d51.3517227!3d35.7035815!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x61a5a909b878501!2sSharif%20University%20of%20Technology!5e0!3m2!1sen!2s!4v1645003775242!5m2!1sen!2s" 
+          width="100%" height="300" frameborder="0" 
+          style={{border:"0", height:"100%", borderRadius: ".34rem", margin: "30px", height: "200px"}} 
+          allowfullscreen="" >
+        </iframe>
+      </div>
       </Center>
       <Right>
-        <Title>Contact Us</Title>
-        <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
-        </ContactItem>
-        <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
-        </ContactItem>
-        <ContactItem>
-          <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev
-        </ContactItem>
-        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
+        <Title>درباره ما</Title>
+        فروشگاه ما سالها تجربه در زمینه پوشاک و مد دارد.
       </Right>
     </Container>
   );

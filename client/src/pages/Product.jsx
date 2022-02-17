@@ -188,7 +188,8 @@ const Product = () => {
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-      <About />
+      {/* <About /> */}
+      <hr></hr>
       <Footer />
     </Container>
   );
