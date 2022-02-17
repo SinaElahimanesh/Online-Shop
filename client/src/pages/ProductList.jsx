@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router";
 import { useState } from "react";
+import About from "../components/About";
 
 const Container = styled.div`
 `;
@@ -17,6 +18,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   margin: 20px;
+  text-align: center;
 `;
 
 const FilterContainer = styled.div`
@@ -100,8 +102,9 @@ const ProductList = () => {
           </Filter>
         </FilterContainer>
         <Products cat={cat} filters={filters} sort={sort} />
-        {/* <About /> */}
-        <hr></hr>
+        <hr />
+        <About />
+        <hr />
         <Footer />
       </Wrapper>
     </Container>

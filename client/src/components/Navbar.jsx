@@ -167,7 +167,7 @@ const func = (e) => {
     <nav>
   <ul class="menu">
     <li class="logo"><a href="/">Poosha</a></li>
-    <li class="item"><a href="#contact">درباره ما</a></li>
+    <li class="item"><a href="#about">درباره ما</a></li>
     <li class="item"><a href="#contact">تماس با ما</a></li>
     <li className="item"><a href="#category">دسته بندی</a></li>
     <li class="item"><a href="/login">ورود</a></li>

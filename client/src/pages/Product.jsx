@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
+import About from "../components/About";
 
 const Container = styled.div``;
 
@@ -187,8 +188,9 @@ const Product = () => {
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-      {/* <About /> */}
-      <hr></hr>
+      <hr />
+      <About />
+      <hr />
       <Footer />
     </Container>
   );

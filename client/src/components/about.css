@@ -1,4 +1,9 @@
 .about {
     padding: 6rem;
     text-align: center;
+    direction: rtl;
+}
+.about h1, p {
+    direction: rtl;
+    font-family: 'A Iranian Sans'
 }
