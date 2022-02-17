@@ -1,0 +1,87 @@
+.gallery {
+  width:vw;
+  min-height:vh;
+  margin: 0 auto;
+  font-size:2rem;
+  text-align:center;
+  padding-top: 7rem;
+}
+
+h2 {
+    font-family: 'A Iranian Sans';
+}
+
+
+.picGrid{
+    display:grid;
+    gap:.8rem;
+    grid: repeat(3, 1fr) / 30% 1fr 30%;
+    min-height: 60rem;
+    width:70vw;
+    margin: 0 auto;
+    margin-top: 2em;
+    
+  }
+  .card{
+    min-height: 100%;
+    background-size:cover;
+    background-position:center;
+    height:100%;
+  }
+
+  .card:hover {
+      transform: scaleX(8px);
+  }
+
+  .pic1{
+    background-image: url('../img/gallery-img/pic2.jpg');
+    grid-row: 1 / span 2;
+  }
+  .pic2{
+    background-image: url('../img/gallery-img/pic1.jpg');
+  }
+  .pic3{
+    background-image: url('../img/gallery-img/pic3.jpg');
+  }
+  .pic4{
+    background-image: url('../img/gallery-img/pic4.jpg');
+  }
+  .pic5{
+
+    background-image: url('../img/gallery-img/pic5.jpg');
+  }
+
+  .image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+  
+  .container:hover .overlay {
+    opacity: 1;
+  }
+   
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }

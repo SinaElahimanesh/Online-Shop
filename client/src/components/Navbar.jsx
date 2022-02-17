@@ -168,6 +168,7 @@ const func = (e) => {
   <ul class="menu">
     <li class="logo"><a href="/">Poosha</a></li>
     <li class="item"><a href="#about">چرا پوشا؟</a></li>
+    <li class="item"><a href="#gallery">گالری</a></li>
     <li class="item"><a href="#contact">تماس با ما</a></li>
     <li className="item"><a href="#category">دسته بندی</a></li>
     <li class="item"><a href="/login">ورود</a></li>
