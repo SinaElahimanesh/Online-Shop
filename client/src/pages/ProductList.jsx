@@ -8,6 +8,7 @@ import { useState } from "react";
 import About from "../components/About";
 import Product from "../components/Product";
 import Gallery from "../components/Gallery";
+import ProductsGallery from "../components/ProductsGallery";
 
 const Container = styled.div`
 `;
@@ -62,6 +63,7 @@ const ProductList = () => {
 
   const handleFilters = (e) => {
     const value = e.target.value;
+    console.log(e.target.name, value)
     setFilters({
       ...filters,
       [e.target.name]: value,
@@ -73,7 +75,7 @@ const ProductList = () => {
       <Navbar />
       <Wrapper>
         <Title>{cat}</Title>
-        <FilterContainer>
+        {/* <FilterContainer>
           <Filter>
             <FilterText>فیلتر:</FilterText>
             <Select name="color" onChange={handleFilters}>
@@ -102,11 +104,11 @@ const ProductList = () => {
               <Option value="desc">گرانترین</Option>
             </Select>
           </Filter>
-        </FilterContainer>
+        </FilterContainer> */}
         <Products cat={cat} filters={filters} sort={sort} />
         {/* <Product /> */}
         <hr />
-        <Gallery />
+        <ProductsGallery />
         <hr />
         <Footer />
       </Wrapper>
