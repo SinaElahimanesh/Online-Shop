@@ -10,3 +10,8 @@
     direction: rtl;
     font-family: 'A Iranian Sans'
 }
+
+@media only screen and (max-width: 600px) {
+
+    
+  }
