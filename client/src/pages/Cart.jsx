@@ -237,14 +237,14 @@ const Cart = () => {
                   <Image src={product.img} />
                   <Details>
                     <ProductName>
-                      <b>Product:</b> {product.title}
+                      <b  style={{fontFamily: 'A Iranian Sans'}}>محصول:</b> {product.title}
                     </ProductName>
                     {/* <ProductId>
                       <b>ID:</b> {product._id}
                     </ProductId> */}
                     <ProductColor color={product.color} />
                     <ProductSize>
-                      <b>Size:</b> {product.size}
+                      <b  style={{fontFamily: 'A Iranian Sans'}}>سایز:</b> {product.size}
                     </ProductSize>
                   </Details>
                 </ProductDetail>
@@ -254,8 +254,8 @@ const Cart = () => {
                     <ProductAmount>{product.quantity}</ProductAmount>
                     <Remove style={{ cursor: "pointer" }} />
                   </ProductAmountContainer>
-                  <ProductPrice>
-                    $ {product.price * product.quantity}
+                  <ProductPrice  style={{fontFamily: 'A Iranian Sans', fontSize: "18px"}}>
+                    تومان {product.price * product.quantity}
                   </ProductPrice>
                   <FiTrash2 style={{ marginTop: "15px", cursor: "pointer", margin: "10px" }}/>
                 </PriceDetail>

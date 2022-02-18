@@ -5,6 +5,7 @@ import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart, AiOutlineHome } from "'../../react-icons/ai"
+import { useState } from "react";
 import "./navbar.css";
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
@@ -79,8 +80,8 @@ const MenuItem = styled.div`
 const Navbar = () => {
   const quantity = useSelector(state=>state.cart.quantity);
   const toggle = document.querySelector(".toggle");
-const menu = document.querySelector(".menu");
-const items = document.querySelectorAll(".item");
+  const menu = document.querySelector(".menu");
+  const items = document.querySelectorAll(".item");
 
 /* Toggle mobile menu */
 function toggleMenu() {
@@ -113,6 +114,7 @@ function closeSubmenu(e) {
     menu.querySelector(".submenu-active").classList.remove("submenu-active");
   }
 };
+
 /* Event Listeners */
 
 const func = (e) => {
@@ -127,9 +129,10 @@ const func = (e) => {
 };
 
 console.log(cookies.get('username') !== undefined)
+
   return (
 
-    <nav>
+    <nav className="topnav" id="myTopnav">
       <ul class="menu">
         <Link to="/cart" style={{color: '#fff'}}><li class="item cart"><AiOutlineShoppingCart /></li></Link>
         <li class="logo"><a href="/">Poosha</a></li>
@@ -149,7 +152,20 @@ console.log(cookies.get('username') !== undefined)
 
         <li class="item"><a href="/">خانه</a></li>
         {cookies.get('username') === undefined ? <li class="item"><a href="/login">ورود</a></li> : <li class="item"><a href="#">{cookies.get('username')}</a></li>}
-        <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+        {/* <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li> */}
+        
+
+        <a href="javascript:void(0);" class="icon">
+          <i style={{color: "#fff"}} class="fa fa-bars" onClick={() => {
+             var x = document.getElementById("myTopnav");
+             if (x.className === "topnav") {
+               x.className += " responsive";
+             } else {
+               x.className = "topnav";
+             }
+          }}></i>
+        </a>
+
       </ul>
     </nav>
   );
