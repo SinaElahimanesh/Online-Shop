@@ -65,7 +65,7 @@ const Register = () => {
 		             <div className="form-group">
 		            	<button type="submit" className="form-control btn rounded submit px-3" 
                    onClick={handleClick}>ثبت نام</button>
-                   {error && <Error>خطایی رخ داده است...</Error>}
+                   {/* {error && <Error>خطایی رخ داده است...</Error>} */}
 		            </div>
 		          </form>
 		          <p className="text-center">قبلا عضو شده اید؟<Link to="/login" > وارد شوید</Link></p>
