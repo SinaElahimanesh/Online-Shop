@@ -145,9 +145,9 @@ console.log(cookies.get('username') !== undefined)
 
           <a href="/#category"  data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuLink" class="item" >دسته بندی کالاها</a>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="/products/men">مردانه</a>
-          <a class="dropdown-item" href="/products/women">زنانه</a>
-          <a class="dropdown-item" href="/products/child">بچگانه</a>
+          <a class="" href="/products/men">مردانه</a>
+          <a class="" href="/products/women">زنانه</a>
+          <a class="" href="/products/child">بچگانه</a>
         </ul>
         <a href="/" class="item" >خانه</a>
         {/* <li class="item"><a href="/" >خانه</a></li> */}

@@ -59,6 +59,11 @@
   .whyUsDetailContainer, .whyUsOptions {
     font-family: 'A Iranian Sans';
     color: #fff;
+    font-size: 18px;
+  }
+
+  .whyUsDetailContainer {
+      font-size: 24px;
   }
 
   @media only screen and (max-width: 600px) {

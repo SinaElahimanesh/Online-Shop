@@ -209,6 +209,10 @@
   
 .dropdown-menu {
   background-color: #ea4e1b;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 1.34rem;
+  text-align: center;
 }
 
 .dropdown-item {
@@ -246,18 +250,27 @@
     float: right;
     display: block;
   }
+
+  .dropdown-menu.show a {
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    
+  }
 }
 
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative; height: 300px;}
+  .topnav.responsive {position: fixed; height: 300px;}
   .topnav.responsive a.icon {
     position: absolute;
     color: #fff;
     right: 0;
     top: 0;
-    background-color: #ea4b1f;
+    background-color: #ea4e1b;
+    position: relative;
   }
   .topnav.responsive a {
     float: none;
@@ -265,7 +278,9 @@
     flex-direction: column;
     text-align: left;
     color: #fff;
-    background-color: #ea4b1f;
+    background-color: #ea4e1b;
+    font-size: small;
+    text-align: end;
   }
   
   .logo {
