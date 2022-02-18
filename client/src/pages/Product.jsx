@@ -90,9 +90,11 @@ const FilterSize = styled.select`
   margin-left: 10px;
   padding: 5px;
   border-radius: .5rem;
+  color: black;
 `;
 
-const FilterSizeOption = styled.option``;
+const FilterSizeOption = styled.option`
+`;
 
 const AddContainer = styled.div`
   width: 50%;
