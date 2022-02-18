@@ -1,5 +1,4 @@
 import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
@@ -130,8 +129,8 @@ const func = (e) => {
       <ul class="menu">
         <Link to="/cart" style={{color: '#fff'}}><li class="item cart"><AiOutlineShoppingCart /></li></Link>
         <li class="logo"><a href="/">Poosha</a></li>
-        <li class="item"><a href="#gallery">گالری</a></li>
-        <li class="item"><a href="#about">چرا پوشا؟</a></li>
+        <li class="item"><a href="/#gallery">گالری</a></li>
+        <li class="item"><a href="/#about">چرا پوشا؟</a></li>
         <li class="item"><a href="#contact">تماس با ما</a></li>
 
         <li className="item" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuLink">

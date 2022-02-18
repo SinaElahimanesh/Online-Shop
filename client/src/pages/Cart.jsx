@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   direction: rtl;
   padding: 20px;
   padding-top: 7rem;
-  ${mobile({ padding: "10px" })}
+  ${mobile({ padding: "15px" })}
 `;
 
 const Title = styled.h1`
@@ -257,7 +257,7 @@ const Cart = () => {
                   <ProductPrice>
                     $ {product.price * product.quantity}
                   </ProductPrice>
-                  <FiTrash2 style={{ marginTop: "15px", cursor: "pointer" }}/>
+                  <FiTrash2 style={{ marginTop: "15px", cursor: "pointer", margin: "10px" }}/>
                 </PriceDetail>
               </Product>
             ))}

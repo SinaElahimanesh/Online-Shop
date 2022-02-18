@@ -15,7 +15,7 @@ const Container = styled.div`
   font-family: 'A Iranian Sans';
   padding-left: 10%;
   padding-right: 10%;
-  ${mobile({ flexDirection: "column" })}
+  ${mobile({ flexDirection: "column", textAlign: "center" })}
 `;
 
 const Left = styled.div`
@@ -24,6 +24,8 @@ const Left = styled.div`
   flex-direction: column;
   padding: 20px;
   font-family: 'A Iranian Sans';
+  ${mobile({ textAlign: "center" , display: 'relative', marginLeft: "35px"})}
+
 `;
 
 const SocialIcon = styled.div`
@@ -41,14 +43,14 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
-  ${mobile({ display: "none" })}
+  ${mobile({ textAlign: "center", display: 'inline' })}
 `;
 
 const Title = styled.h3`
   margin-bottom: 30px;
   text-align: center;
   font-family: 'A Iranian Sans';
-
+  ${mobile({  padding: "0", display: 'flex', marginLeft: "2em"})}
 `;
 
 const Right = styled.div`
@@ -56,8 +58,12 @@ const Right = styled.div`
   flex: 1;
   padding: 20px;
   font-family: 'A Iranian Sans';
-  // ${mobile({ backgroundColor: "#fff8f8" })}
+  ${mobile({ textAlign: "center", display: 'none' })}
 
+`;
+
+const Map = styled.div`
+    ${mobile({  padding: "0", display: 'flex', marginRight: "3em"})}
 `;
 
 const ContactItem = styled.div`
@@ -65,6 +71,7 @@ const ContactItem = styled.div`
   display: flex;
   align-items: center;
   font-family: 'A Iranian Sans';
+  ${mobile({  padding: "0", display: 'flex'})}
 `;
 
 const Footer = () => {
@@ -84,6 +91,7 @@ const Footer = () => {
         </Left>
       <Center>
       <div class="col-md-10 col-md-6">
+        <Map>
         <iframe 
           class="map relative-vertical-center" 
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12959.680768283184!2d51.3517227!3d35.7035815!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x61a5a909b878501!2sSharif%20University%20of%20Technology!5e0!3m2!1sen!2s!4v1645003775242!5m2!1sen!2s" 
@@ -91,6 +99,8 @@ const Footer = () => {
           style={{border:"0", height:"100%", borderRadius: ".34rem", margin: "30px", height: "200px"}} 
           allowfullscreen="" >
         </iframe>
+        </Map>
+        
       </div>
       </Center>
       <Right>
