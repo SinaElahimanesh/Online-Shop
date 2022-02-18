@@ -26,8 +26,8 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: 90vh;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   // background-image: url('../img/gallery-img/pic1.jpg');
   ${mobile({ height: "40vh" })}
@@ -134,24 +134,27 @@ const Product = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // const getProduct = async () => {
-    //   try {
-    //     const res = await publicRequest.get("/products/find/" + id);
-    //     console.log(res);
-    //     setProduct("Salam");
-    //   } catch {}
-    // };
+  console.log('jjj', id)
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        console.log(res.data.img);
+        setProduct(res.data);
+      } catch(err) {
+        console.log(err);
+      }
+    };
 
-    const getProduct = () => {
-      setProduct(    {
-        id:1,
-        name: "T-shirt",
-        price: 340000,
-        img:"../img/gallery-img/pic1.jpg",
-        desc: "پوشاک باکیفیت",
-        cat: "men",
-      });
-    }
+    // const getProduct = () => {
+    //   setProduct(    {
+    //     id:1,
+    //     name: "T-shirt",
+    //     price: 340000,
+    //     img:"../img/gallery-img/pic1.jpg",
+    //     desc: "پوشاک باکیفیت",
+    //     cat: "men",
+    //   });
+    // }
     getProduct();
   }, [id]);
 
@@ -167,6 +170,7 @@ const Product = () => {
     dispatch(
       addProduct({ ...product, quantity, color, size })
     );
+    window.location.href = "/cart";
   };
   return (
     <Container>
@@ -175,10 +179,10 @@ const Product = () => {
         
         
         <ImgContainer>
-          {/* <Image src={product.img} /> */}
+          <Image src={product.img} className="product-image-style" />
           {/* <Image src="https://images.pexels.com/photos/3972510/pexels-photo-3972510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" /> */}
           {/* <img src="../img/female-model-shooting-guide.jpg" alt="" /> */}
-          <img src="../img/gallery-img/pic1.jpg"  />
+          {/* <img src="../img/gallery-img/pic1.jpg"  /> */}
         </ImgContainer>
         <InfoContainer>
           <Title>{product.name}</Title>
