@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart, AiOutlineHome } from "'../../react-icons/ai"
 import "./navbar.css";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 const Container = styled.div`
   height: 60px;
@@ -123,6 +125,8 @@ const func = (e) => {
   }
   document.addEventListener("click", closeSubmenu, false);
 };
+
+console.log(cookies.get('username') !== undefined)
   return (
 
     <nav>
@@ -144,7 +148,7 @@ const func = (e) => {
  
 
         <li class="item"><a href="/">خانه</a></li>
-        <li class="item"><a href="/login">ورود</a></li>
+        {cookies.get('username') === undefined ? <li class="item"><a href="/login">ورود</a></li> : <li class="item"><a href="#">{cookies.get('username')}</a></li>}
         <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
       </ul>
     </nav>
