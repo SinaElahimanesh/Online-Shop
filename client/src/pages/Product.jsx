@@ -11,7 +11,8 @@ import { useDispatch } from "react-redux";
 import About from "../components/About";
 import '../components/slider.css';
 
-const Container = styled.div``;
+const Container = styled.div`
+`;
 
 const Wrapper = styled.div`
   padding: 50px;
