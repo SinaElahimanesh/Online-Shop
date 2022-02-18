@@ -134,24 +134,22 @@ console.log(cookies.get('username') !== undefined)
 
     <nav className="topnav" id="myTopnav">
       <ul class="menu">
-        <Link to="/cart" style={{color: '#fff'}}><li class="item cart"><AiOutlineShoppingCart /></li></Link>
+        <Link to="/cart" style={{color: '#fff'}}><li class="item cart"><AiOutlineShoppingCart size={23}/></li></Link>
         <li class="logo"><a href="/">Poosha</a></li>
-        <li class="item"><a href="#contact">تماس با ما</a></li>
-        <li class="item"><a href="/#gallery">گالری</a></li>
-        <li class="item"><a href="/#about">چرا پوشا؟</a></li>
+        <a href="#contact">تماس با ما</a>
+        <a href="/#gallery">گالری</a>
+        <a href="/#about">چرا پوشا؟</a>
 
-        <li className="item" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuLink">
-          <a href="#category">دسته بندی کالاها</a>
-        </li>
+          <a href="/#category"  data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuLink">دسته بندی کالاها</a>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="/products/men">مردانه</a></li>
-          <li><a class="dropdown-item" href="/products/women">زنانه</a></li>
-          <li><a class="dropdown-item" href="/products/child">بچگانه</a></li>
+          <a class="dropdown-item" href="/products/men">مردانه</a>
+          <a class="dropdown-item" href="/products/women">زنانه</a>
+          <a class="dropdown-item" href="/products/child">بچگانه</a>
         </ul>
  
 
-        <li class="item"><a href="/">خانه</a></li>
-        {cookies.get('username') === undefined ? <li class="item"><a href="/login">ورود</a></li> : <li class="item"><a href="#">{cookies.get('username')}</a></li>}
+        <a href="/">خانه</a>
+        {cookies.get('username') === undefined ? <a href="/login">ورود</a>: <li class="item"><a href="#">{cookies.get('username')}</a></li>}
         {/* <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li> */}
         
 
