@@ -133,9 +133,19 @@ const func = (e) => {
         <li class="item"><a href="#about">چرا پوشا؟</a></li>
         <li class="item"><a href="#gallery">گالری</a></li>
         <li class="item"><a href="#contact">تماس با ما</a></li>
-        <li className="item"><a href="#category">دسته بندی</a></li>
+
+        <li className="item" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuLink">
+          <a href="#category">دسته بندی</a>
+        </li>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="/products/men">مردانه</a></li>
+          <li><a class="dropdown-item" href="/products/women">زنانه</a></li>
+          <li><a class="dropdown-item" href="/products/child">بچگانه</a></li>
+        </ul>
+ 
+
+        <li class="item"><a href="/">خانه</a></li>
         <li class="item"><a href="/login">ورود</a></li>
-        <li class="item"><a href="/Register">ثبت نام</a></li>
         <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
       </ul>
     </nav>
