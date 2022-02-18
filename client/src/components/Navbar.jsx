@@ -8,7 +8,9 @@ import { AiOutlineShoppingCart, AiOutlineHome } from "'../../react-icons/ai"
 import { useState } from "react";
 import "./navbar.css";
 import Cookies from 'universal-cookie';
+import { resetProducts } from "../redux/cartRedux";
 const cookies = new Cookies();
+
 
 const Container = styled.div`
   height: 60px;
@@ -152,6 +154,7 @@ console.log(cookies.get('username') !== undefined)
         {cookies.get('username') === undefined ? <a href="/login" class="item">ورود</a> : <a href="#" class="item">{cookies.get('username')}</a>}
         {cookies.get('username') !== undefined ? <a href='#' class="item item-logout" class="item" onClick={() => {
                cookies.remove('username', { path: '/' });
+               resetProducts();
                window.location.reload();
           }}>خروج از حساب کاربری</a>:<div></div>}
         {/* <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li> */}

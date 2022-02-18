@@ -52,7 +52,7 @@ const Login = () => {
 		            <div className="form-group">
 		            	<button type="submit" className="form-control btn rounded submit px-3" 
                    onClick={handleClick}>ورود</button>
-                   {/* {error && <Error>خطایی رخ داده است...</Error>} */}
+                   {error && <Error>خطایی رخ داده است...</Error>}
 		            </div>
 		          </form>
 		          <p className="text-center">حساب ندارید؟ <Link to="/register">ثبت نام کنید</Link></p>

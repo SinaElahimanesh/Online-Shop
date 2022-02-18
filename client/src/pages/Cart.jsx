@@ -215,6 +215,7 @@ const Cart = () => {
     //   setQuantity(product.quantity + 1);
     // }
     setProductss(productss.filter(item => item != product));
+    cart.products = productss;
     // dispatch(
     //   removeProduct({ ...product, product.quantity, product.color, product.size })
     // );
