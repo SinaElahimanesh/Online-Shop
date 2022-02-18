@@ -76,7 +76,7 @@ const ProductList = () => {
           <Filter>
             <FilterText>فیلتر:</FilterText>
             <Select name="color" onChange={handleFilters}>
-              <Option disabled>رنگ</Option>
+              <Option disabled>رنگ </Option>
               <Option>سفید</Option>
               <Option>مشکی</Option>
               <Option>قرمز</Option>
@@ -103,7 +103,7 @@ const ProductList = () => {
           </Filter>
         </FilterContainer>
         <Products cat={cat} filters={filters} sort={sort} />
-        <Product />
+        {/* <Product /> */}
         <hr />
         <About />
         <hr />

@@ -8,6 +8,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
+import { popularProducts } from "../data";
 import "../components/slider.css";
 
 const KEY = process.env.REACT_APP_STRIPE;
@@ -222,7 +223,9 @@ const Cart = () => {
       <Wrapper>
         <Title>سبد خرید</Title>
         <Top>
+          <a href="/">
           <TopButton className="custom-btn btn-3" ><span style={{fontFamily: 'A Iranian Sans'}}>مشاهده سایر کالا ها</span></TopButton>
+          </a>
           {/* <TopButton type="filled">CHECKOUT NOW</TopButton> */}
         </Top>
         <Bottom>
