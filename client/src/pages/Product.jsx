@@ -19,6 +19,8 @@ const Wrapper = styled.div`
   display: flex;
   padding-top: 7rem;
   direction: rtl;
+  height: 700px;
+  align-items: center;
   ${mobile({ padding: "10px", flexDirection: "column" })}
 `;
 
@@ -209,8 +211,8 @@ const Product = () => {
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-      <hr />
-      <About />
+      {/* <hr />
+      <About /> */}
       <hr />
       <Footer />
     </Container>
