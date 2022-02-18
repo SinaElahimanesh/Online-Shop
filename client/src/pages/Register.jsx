@@ -35,7 +35,7 @@ const Register = () => {
 						<div className="login-wrap p-4 p-lg-5">
 			      	<div className="d-flex">
 			      		<div className="w-100">
-			      			<h3 className="mb-8">Sign Up</h3>
+			      			<h3 className="mb-8">ثبت نام</h3>
 			      		</div>
 			      	</div>
 							<form action="#" className="signin-form">
@@ -44,16 +44,16 @@ const Register = () => {
 			      			<input type="text" className="form-control" placeholder="Name" required />
 			      		</div> */}
 			      	<div className="form-group mb-3">
-			      			<label className="label" for="name">Username</label>
-			      			<input type="text" className="form-control" placeholder="Username" required   onChange={(e) => setUsername(e.target.value)} />
+			      			<label className="label" for="name">نام کاربری</label>
+			      			<input type="text" className="form-control" placeholder="نام کاربری" required   onChange={(e) => setUsername(e.target.value)} />
 			      		</div>
 		            <div className="form-group mb-3">
-		            	<label className="label" for="password">Password</label>
-		              <input type="password" className="form-control" placeholder="Password" required  onChange={(e) => setPassword(e.target.value)} />
+		            	<label className="label" for="password">رمزعبور</label>
+		              <input type="password" className="form-control" placeholder="رمزعبور" required  onChange={(e) => setPassword(e.target.value)} />
 		            </div>
                 <div className="form-group mb-3">
-			      			<label className="label" for="name">Email</label>
-			      			<input type="email" className="form-control" placeholder="Email" required  onChange={(e) => setEmail(e.target.value)}  />
+			      			<label className="label" for="name">ایمیل</label>
+			      			<input type="email" className="form-control" placeholder="ایمیل" required  onChange={(e) => setEmail(e.target.value)}  />
 			      		</div>
                 {/* <div className="form-group mb-3">
 			      			<label className="label" for="name">Confirm Password</label>
@@ -64,11 +64,11 @@ const Register = () => {
 		            </div> */}
 		             <div className="form-group">
 		            	<button type="submit" className="form-control btn rounded submit px-3" 
-                   onClick={handleClick}>Sign Up</button>
-                   {error && <Error>Something went wrong...</Error>}
+                   onClick={handleClick}>ثبت نام</button>
+                   {error && <Error>خطایی رخ داده است...</Error>}
 		            </div>
 		          </form>
-		          <p className="text-center">Already have an account? <Link to="/login" >Sign In</Link></p>
+		          <p className="text-center">قبلا عضو شده اید؟<Link to="/login" > وارد شوید</Link></p>
 		        </div>
 		      </div>
 				</div>
