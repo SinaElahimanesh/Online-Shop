@@ -76,6 +76,15 @@ const MenuItem = styled.div`
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
 const Navbar = () => {
   const quantity = useSelector(state=>state.cart.quantity);
   const toggle = document.querySelector(".toggle");
@@ -127,9 +136,10 @@ const func = (e) => {
 };
 
 console.log(cookies.get('username') !== undefined)
+
   return (
 
-    <nav>
+    <nav className="topnav" id="myTopnav">
       <ul class="menu">
         <Link to="/cart" style={{color: '#fff'}}><li class="item cart"><AiOutlineShoppingCart /></li></Link>
         <li class="logo"><a href="/">Poosha</a></li>
@@ -149,7 +159,13 @@ console.log(cookies.get('username') !== undefined)
 
         <li class="item"><a href="/">خانه</a></li>
         {cookies.get('username') === undefined ? <li class="item"><a href="/login">ورود</a></li> : <li class="item"><a href="#">{cookies.get('username')}</a></li>}
-        <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+        {/* <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li> */}
+        
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i style={{color: "#fff"}} class="fa fa-bars"></i>
+        </a>
+
       </ul>
     </nav>
   );
