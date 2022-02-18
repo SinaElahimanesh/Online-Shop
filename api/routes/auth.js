@@ -18,7 +18,8 @@ router.post("/register", async (req, res) => {
 
   try {
     const savedUser = await newUser.save();
-    res.status(201).json(savedUser);
+    res.status(200).cookie('username' ,savedUser.username, { maxAge: 900000 }).send();
+    // res.status(201).json(savedUser);
   } catch (err) {
     res.status(500).json(err);
   }

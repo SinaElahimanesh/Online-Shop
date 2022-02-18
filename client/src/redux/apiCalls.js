@@ -11,7 +11,9 @@ export const login = async (dispatch, user, path) => {
       cookies.set('username', user.username, { path: '/' })
       console.log('a', cookies.get('username')); 
       window.location.href = "/";
-    }         
+    } else {
+      
+    }  
     // console.log(res.status)
     dispatch(loginSuccess(res.data));
   } catch (err) {
