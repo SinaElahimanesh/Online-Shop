@@ -10,6 +10,7 @@ import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import About from "../components/About";
 import '../components/slider.css';
+import '../components/fonts.css';
 
 const Container = styled.div`
 `;
@@ -54,7 +55,7 @@ const Desc = styled.p`
 const Price = styled.span`
   font-weight: 100;
   font-size: 20px;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
 `;
 
 const FilterContainer = styled.div`
@@ -72,7 +73,7 @@ const Filter = styled.div`
 
 const FilterTitle = styled.span`
   font-size: 20px;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   padding: 8px;
   font-weight: 200;
 `;
@@ -201,7 +202,7 @@ const Product = () => {
               <Amount>{quantity}</Amount>
               <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button onClick={handleClick}className="custom-btn btn-3"><span style={{ fontFamily: "A Iranian Sans"}}>افزودن به سبد خرید</span></Button>
+            <Button onClick={handleClick}className="custom-btn btn-3"><span style={{   fontFamily: 'IranSans'}}>افزودن به سبد خرید</span></Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

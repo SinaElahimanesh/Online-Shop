@@ -9,10 +9,11 @@ import {
 } from "@material-ui/icons";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import './fonts.css'
 
 const Container = styled.div`
   display: flex;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   padding-left: 10%;
   padding-right: 10%;
   ${mobile({ flexDirection: "column", textAlign: "center" })}
@@ -23,7 +24,7 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   ${mobile({ textAlign: "center" , display: 'relative', marginLeft: "35px"})}
 
 `;
@@ -49,7 +50,7 @@ const Center = styled.div`
 const Title = styled.h3`
   margin-bottom: 30px;
   text-align: center;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   ${mobile({  padding: "0", display: 'flex', marginLeft: "2em", fontSize: "20px"})}
 `;
 
@@ -57,7 +58,7 @@ const Right = styled.div`
   direction: rtl;
   flex: 1;
   padding: 20px;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   ${mobile({ textAlign: "center", display: 'none' , fontSize: "12px"})}
 
 `;
@@ -70,7 +71,7 @@ const ContactItem = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   ${mobile({  padding: "0", display: 'flex', fontSize: "15px"})}
 `;
 

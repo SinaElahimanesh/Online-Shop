@@ -9,6 +9,7 @@ import About from "../components/About";
 import Product from "../components/Product";
 import Gallery from "../components/Gallery";
 import ProductsGallery from "../components/ProductsGallery";
+import '../components/fonts.css';
 
 const Container = styled.div`
 `;
@@ -38,7 +39,7 @@ const FilterText = styled.span`
   font-size: 20px;
   font-weight: 600;
   margin-right: 20px;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   ${mobile({ marginRight: "0px" })}
 `;
 
@@ -46,12 +47,12 @@ const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
   border-radius: .9rem;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   font-size: 13px;
   ${mobile({ margin: "10px 0px" })}
 `;
 const Option = styled.option`
-font-family: 'A Iranian Sans';
+font-family: 'IranSans';
 font-size: 13px;
 `;
 

@@ -1,10 +1,17 @@
+@font-face {
+    font-family: 'IranSans';
+    src: url('../fonts/iran_sans.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  }
+  
 :root {
     --background-color: #222;
     --color: #000;
     --light-theme: #fff;
 }
 body {
-    font-family: 'A Iranian Sans';
+    /* font-family: 'A Iranian Sans'; */
+    font-family: 'IranSans';
     background-color: var(--background-color);
     color: var(--light-theme);
 }
@@ -43,7 +50,8 @@ body {
 }
 .shop-now {
     position: relative;
-    font-family: 'A Iranian Sans';
+    /* font-family: 'A Iranian Sans'; */
+    font-family: 'IranSans';
 
 }
 .shop-now .santa-icon {

@@ -5,6 +5,7 @@ import { sliderItems } from "../data";
 import { mobile } from "../responsive";
 import Button from "./Button";
 import "./slider.css";
+import "./fonts.css"
 
 const Container = styled.div`
   width: 100%;
@@ -71,7 +72,7 @@ const Title = styled.h1`
   font-size: 70px;
   color: #333;
   text-align: center;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   padding: 10px;
 `;
 

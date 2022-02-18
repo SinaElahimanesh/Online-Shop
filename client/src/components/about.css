@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'IranSans';
+    src: url('../fonts/iran_sans.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  }
+  
 .about {
     text-align: center;
     direction: rtl;
@@ -8,7 +14,8 @@
 }
 .about h1, p {
     direction: rtl;
-    font-family: 'A Iranian Sans';
+    /* font-family: 'A Iranian Sans'; */
+    font-family: 'IranSans';
 }
 
 .why-us-img {
@@ -57,7 +64,8 @@
 }
 
   .whyUsDetailContainer, .whyUsOptions {
-    font-family: 'A Iranian Sans';
+    /* font-family: 'A Iranian Sans'; */
+    font-family: 'IranSans';
     color: #fff;
     font-size: 18px;
   }

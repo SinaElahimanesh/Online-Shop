@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
 import './nav.css';
+import './fonts.css'
 
 
 import React from 'react'
@@ -18,9 +19,9 @@ const NavbarWeb = () => {
                 <Nav.Link className='item' href="#features">ورود</Nav.Link>
                 <Nav.Link className='item' href="#pricing">خانه</Nav.Link>
                 <NavDropdown className='item' title='دسته بندی' id="collasible-nav-dropdown">
-                    <NavDropdown.Item style={{textAlign: "center", fontFamily: 'A Iranian Sans'}} class='drop-item' href="/products/men">مردانه</NavDropdown.Item>
-                    <NavDropdown.Item style={{textAlign: "center", fontFamily: 'A Iranian Sans'}} class='drop-item' href="/products/women">زنانه</NavDropdown.Item>
-                    <NavDropdown.Item style={{textAlign: "center", fontFamily: 'A Iranian Sans'}} class='drop-item' href="/products/child">بچگانه</NavDropdown.Item>
+                    <NavDropdown.Item style={{textAlign: "center", fontFamily: 'IranSans'}} class='drop-item' href="/products/men">مردانه</NavDropdown.Item>
+                    <NavDropdown.Item style={{textAlign: "center", fontFamily: 'IranSans'}} class='drop-item' href="/products/women">زنانه</NavDropdown.Item>
+                    <NavDropdown.Item style={{textAlign: "center", fontFamily: 'IranSans'}} class='drop-item' href="/products/child">بچگانه</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link className='item' href="#pricing">چرا پوشا؟</Nav.Link>
                 <Nav.Link className='item' href="#pricing">گالری</Nav.Link>

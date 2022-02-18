@@ -12,6 +12,7 @@ import { popularProducts } from "../data";
 import "../components/slider.css";
 import { FiTrash2 } from 'react-icons/fi'
 import { removeProduct } from "../redux/cartRedux";
+import '../components/fonts.css';
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -27,7 +28,7 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-weight: 300;
   text-align: center;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
 
 `;
 
@@ -43,7 +44,7 @@ const TopButton = styled.button`
   font-weight: 600;
   cursor: pointer;
   color: #fff;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   width: 13rem;
   border: ${(props) => props.type === "filled" && "none"};
   background-color: ${(props) =>
@@ -63,26 +64,26 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   ${mobile({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`
   flex: 3;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
 `;
 
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   ${mobile({ flexDirection: "column" })}
 `;
 
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
 `;
 
 const Image = styled.img`
@@ -94,18 +95,18 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
 `;
 
 const ProductName = styled.span`
-  font-family: 'A Iranian Sans';
+font-family: 'IranSans';
 
 `;
 
 const ProductId = styled.span``;
 
 const ProductColor = styled.div`
-font-family: 'A Iranian Sans';
+font-family: 'IranSans';
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -120,7 +121,7 @@ const PriceDetail = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
 
 `;
 
@@ -149,7 +150,7 @@ const Hr = styled.hr`
 `;
 
 const Summary = styled.div`
-  font-family: 'A Iranian Sans';
+font-family: 'IranSans';
   flex: 1;
   // border: 0.5px solid lightgray;
   border-radius: 10px;
@@ -161,7 +162,7 @@ const Summary = styled.div`
 
 const SummaryTitle = styled.h1`
   font-weight: 200;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   font-size: 24px;
   text-align: center;
 
@@ -171,14 +172,14 @@ const SummaryItem = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
   font-size: 18px;
   font-weight: ${(props) => props.type === "total" && "500"};
   font-size: ${(props) => props.type === "total" && "24px"};
 `;
 
 const SummaryItemText = styled.span`
-  font-family: 'A Iranian Sans';
+font-family: 'IranSans';
   font-size: 15px;
 
 `;
@@ -192,7 +193,7 @@ const Button = styled.button`
   color: white;
   font-weight: 600;
   margin-top: 17px;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
 
 `;
 
@@ -253,7 +254,7 @@ const Cart = () => {
         <Title>سبد خرید</Title>
         <Top>
           <a href="/">
-          <TopButton className="custom-btn btn-3" ><span style={{fontFamily: 'A Iranian Sans'}}>ادامه فرایند خرید</span></TopButton>
+          <TopButton className="custom-btn btn-3" ><span style={{  fontFamily: 'IranSans'}}>ادامه فرایند خرید</span></TopButton>
           </a>
           {/* <TopButton type="filled">CHECKOUT NOW</TopButton> */}
         </Top>
@@ -265,14 +266,14 @@ const Cart = () => {
                   <Image src={product.img} />
                   <Details>
                     <ProductName>
-                      <b  style={{fontFamily: 'A Iranian Sans'}}>محصول:</b> {product.title}
+                      <b  style={{  fontFamily: 'IranSans'}}>محصول:</b> {product.title}
                     </ProductName>
                     {/* <ProductId>
                       <b>ID:</b> {product._id}
                     </ProductId> */}
                     <ProductColor color={product.color} />
                     <ProductSize>
-                      <b  style={{fontFamily: 'A Iranian Sans'}}>توضیحات:</b> {product.desc}
+                      <b  style={{  fontFamily: 'IranSans'}}>توضیحات:</b> {product.desc}
                     </ProductSize>
                   </Details>
                 </ProductDetail>
@@ -282,7 +283,7 @@ const Cart = () => {
                     <ProductAmount>{product.quantity}</ProductAmount>
                     {/* <Remove style={{ cursor: "pointer" }} onClick={() => handleQuantity("dec", product)} /> */}
                   </ProductAmountContainer>
-                  <ProductPrice  style={{fontFamily: 'A Iranian Sans', fontSize: "18px"}}>
+                  <ProductPrice  style={{  fontFamily: 'IranSans', fontSize: "18px"}}>
                     تومان {product.price * product.quantity}
                   </ProductPrice>
                   <FiTrash2 style={{ marginTop: "15px", cursor: "pointer", margin: "10px" }} onClick={() => handleQuantity("dec", product)}/>
@@ -318,7 +319,7 @@ const Cart = () => {
               token={onToken}
               stripeKey={KEY}
             >
-              <Button className="custom-btn btn-3"><span style={{fontFamily: 'A Iranian Sans'}}>نهایی کردن خرید</span></Button>
+              <Button className="custom-btn btn-3"><span style={{  fontFamily: 'IranSans'}}>نهایی کردن خرید</span></Button>
             </StripeCheckout>
           </Summary>
         </Bottom>

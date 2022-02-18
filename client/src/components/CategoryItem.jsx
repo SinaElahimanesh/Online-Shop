@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import Button from "./Button";
+import './fonts.css';
 
 const Container = styled.div`
   flex: 1;
@@ -28,14 +29,14 @@ const Info = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'A Iranian Sans';
+  font-family: 'IranSans';
 
 `;
 
 const Title = styled.h1`
     color:white;
     margin-bottom: 20px;
-    font-family: 'A Iranian Sans';
+    font-family: 'IranSans';
 
 `;
 

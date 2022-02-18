@@ -1,11 +1,19 @@
+@font-face {
+    font-family: 'IranSans';
+    src: url('../fonts/iran_sans.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  }
+  
 section{
     max-width: 100%;
-    font-family: 'A Iranian Sans';
+    /* font-family: 'A Iranian Sans'; */
+    font-family: 'IranSans';
 
 }
 
 *{
-    font-family: 'A Iranian Sans';
+    /* font-family: 'A Iranian Sans'; */
+    font-family: 'IranSans';
 
 }
 .login-wrap {
