@@ -23,7 +23,7 @@ h2 {
     display:grid;
     gap:.8rem;
     grid: repeat(3, 1fr) / 30% 1fr 30%;
-    min-height: 60rem;
+    min-height: 50rem;
     width:70vw;
     margin: 0 auto;
     margin-top: 2em;
