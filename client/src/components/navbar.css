@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'IranSans';
+  src: url('../fonts/iran_sans.ttf') format('truetype');
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+  font-family: 'Ebtekar';
+  src: url('../fonts/ebtekar.ttf') format('truetype');
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+  font-family: 'Sadgan';
+  src: url('../fonts/sadgan_medium.ttf') format('truetype');
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
 :root {
     --navItem: #fff;
 }
@@ -79,7 +97,9 @@
   .menu a {
     display: block;
     padding: 5px 0px ;
-    font-family: 'A Iranian Sans';
+    /* font-family: 'A Iranian Sans'; */
+    font-family: 'IranSans';
+    /* font-family: 'sadgan'; */
     color: #fff;
   }
   .menu li.subitem a {

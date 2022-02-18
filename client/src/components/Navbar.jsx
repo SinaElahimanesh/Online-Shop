@@ -155,6 +155,7 @@ console.log(cookies.get('username') !== undefined)
         {cookies.get('username') !== undefined ? <a href='#' class="item item-logout" class="item" onClick={() => {
                cookies.remove('username', { path: '/' });
                resetProducts();
+               window.localStorage.clear(); 
                window.location.reload();
           }}>خروج از حساب کاربری</a>:<div></div>}
         {/* <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li> */}
