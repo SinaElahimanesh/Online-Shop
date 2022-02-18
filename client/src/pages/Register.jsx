@@ -64,7 +64,7 @@ const Register = () => {
 		            </div> */}
 		             <div className="form-group">
 		            	<button type="submit" className="form-control btn rounded submit px-3" 
-                   onClick={handleClick} disabled={isFetching}>Sign Up</button>
+                   onClick={handleClick}>Sign Up</button>
                    {error && <Error>Something went wrong...</Error>}
 		            </div>
 		          </form>
