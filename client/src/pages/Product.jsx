@@ -147,7 +147,7 @@ const Product = () => {
         id:1,
         name: "T-shirt",
         price: 340000,
-        img:"../img/gallery-img/pic1.jpg",
+        img:"https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
         desc: "پوشاک باکیفیت",
         cat: "men",
       });
@@ -174,19 +174,16 @@ const Product = () => {
       <Wrapper>
         
         
-        <ImgContainer>
-          {/* <Image src={product.img} /> */}
+        <ImgContainer >
+          <Image src={product.img} />
           {/* <Image src="https://images.pexels.com/photos/3972510/pexels-photo-3972510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" /> */}
           {/* <img src="../img/female-model-shooting-guide.jpg" alt="" /> */}
-          <img src="../img/gallery-img/pic1.jpg"  />
+          {/* <img src="../img/gallery-img/pic1.jpg"  /> */}
         </ImgContainer>
         <InfoContainer>
           <Title>{product.name}</Title>
           <Desc>{product.desc}</Desc>
           <Price>{product.price} تومان</Price>
-          {/* <Title>تست</Title>
-          <Desc>چند تا بولشت برای تو پاچه کردن مردم</Desc>
-          <Price>329000</Price> */}
           <FilterContainer>
             <Filter>
               <FilterTitle>رنگ</FilterTitle>
