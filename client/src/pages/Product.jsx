@@ -26,8 +26,8 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: 90vh;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   // background-image: url('../img/gallery-img/pic1.jpg');
   ${mobile({ height: "50vh", marginTop: "5rem" })}
@@ -135,24 +135,16 @@ const Product = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // const getProduct = async () => {
-    //   try {
-    //     const res = await publicRequest.get("/products/find/" + id);
-    //     console.log(res);
-    //     setProduct("Salam");
-    //   } catch {}
-    // };
-
-    const getProduct = () => {
-      setProduct(    {
-        id:1,
-        name: "T-shirt",
-        price: 340000,
-        img:"https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
-        desc: "پوشاک باکیفیت",
-        cat: "men",
-      });
-    }
+  console.log('jjj', id)
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        console.log(res.data.img);
+        setProduct(res.data);
+      } catch(err) {
+        console.log(err);
+      }
+    };
     getProduct();
   }, [id]);
 
@@ -168,6 +160,7 @@ const Product = () => {
     dispatch(
       addProduct({ ...product, quantity, color, size })
     );
+    window.location.href = "/cart";
   };
   return (
     <Container>
@@ -177,6 +170,7 @@ const Product = () => {
         
         <ImgContainer>
           <Image src={product.img} />
+
           {/* <Image src="https://images.pexels.com/photos/3972510/pexels-photo-3972510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" /> */}
           {/* <img src="../img/female-model-shooting-guide.jpg" alt="" /> */}
           {/* <img src="../img/gallery-img/pic1.jpg"  /> */}
@@ -185,6 +179,9 @@ const Product = () => {
           <Title>{product.name}</Title>
           <Desc>{product.desc}</Desc>
           <Price>{product.price} تومان</Price>
+          {/* <Title>تست</Title>
+          <Desc>چند تا بولشت برای تو پاچه کردن مردم</Desc>
+          <Price>329000</Price> */}
           <FilterContainer>
             <Filter>
               <FilterTitle>رنگ</FilterTitle>

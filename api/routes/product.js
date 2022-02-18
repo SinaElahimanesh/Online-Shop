@@ -48,8 +48,10 @@ router.delete("/:id", async (req, res) => {
 
 //GET PRODUCT
 router.get("/find/:id", async (req, res) => {
+  console.log(req)
   try {
     const product = await Product.findById(req.params.id);
+    console.log(product)
     res.status(200).json(product);
   } catch (err) {
     res.status(500).json(err);
@@ -74,7 +76,6 @@ router.get("/", async (req, res) => {
     } else {
       products = await Product.find();
     }
-
     res.status(200).json(products);
   } catch (err) {
     res.status(500).json(err);
