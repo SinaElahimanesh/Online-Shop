@@ -134,6 +134,7 @@ const Product = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+<<<<<<< HEAD
   console.log('jjj', id)
     const getProduct = async () => {
       try {
@@ -155,6 +156,26 @@ const Product = () => {
     //     cat: "men",
     //   });
     // }
+=======
+    // const getProduct = async () => {
+    //   try {
+    //     const res = await publicRequest.get("/products/find/" + id);
+    //     console.log(res);
+    //     setProduct("Salam");
+    //   } catch {}
+    // };
+
+    const getProduct = () => {
+      setProduct(    {
+        id:1,
+        name: "T-shirt",
+        price: 340000,
+        img:"https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+        desc: "پوشاک باکیفیت",
+        cat: "men",
+      });
+    }
+>>>>>>> 750a75f1324b0331b98ad28a2dbe4953394a279b
     getProduct();
   }, [id]);
 
@@ -178,8 +199,13 @@ const Product = () => {
       <Wrapper>
         
         
+<<<<<<< HEAD
         <ImgContainer>
           <Image src={product.img} className="product-image-style" />
+=======
+        <ImgContainer >
+          <Image src={product.img} />
+>>>>>>> 750a75f1324b0331b98ad28a2dbe4953394a279b
           {/* <Image src="https://images.pexels.com/photos/3972510/pexels-photo-3972510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" /> */}
           {/* <img src="../img/female-model-shooting-guide.jpg" alt="" /> */}
           {/* <img src="../img/gallery-img/pic1.jpg"  /> */}
@@ -188,9 +214,6 @@ const Product = () => {
           <Title>{product.name}</Title>
           <Desc>{product.desc}</Desc>
           <Price>{product.price} تومان</Price>
-          {/* <Title>تست</Title>
-          <Desc>چند تا بولشت برای تو پاچه کردن مردم</Desc>
-          <Price>329000</Price> */}
           <FilterContainer>
             <Filter>
               <FilterTitle>رنگ</FilterTitle>

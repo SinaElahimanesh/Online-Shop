@@ -10,6 +10,7 @@ import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
 import { popularProducts } from "../data";
 import "../components/slider.css";
+import { FiTrash2 } from 'react-icons/fi'
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -224,7 +225,7 @@ const Cart = () => {
         <Title>سبد خرید</Title>
         <Top>
           <a href="/">
-          <TopButton className="custom-btn btn-3" ><span style={{fontFamily: 'A Iranian Sans'}}>مشاهده سایر کالا ها</span></TopButton>
+          <TopButton className="custom-btn btn-3" ><span style={{fontFamily: 'A Iranian Sans'}}>ادامه فرایند خرید</span></TopButton>
           </a>
           {/* <TopButton type="filled">CHECKOUT NOW</TopButton> */}
         </Top>
@@ -238,9 +239,9 @@ const Cart = () => {
                     <ProductName>
                       <b>Product:</b> {product.title}
                     </ProductName>
-                    <ProductId>
+                    {/* <ProductId>
                       <b>ID:</b> {product._id}
-                    </ProductId>
+                    </ProductId> */}
                     <ProductColor color={product.color} />
                     <ProductSize>
                       <b>Size:</b> {product.size}
@@ -249,33 +250,34 @@ const Cart = () => {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add />
+                    <Add style={{ cursor: "pointer" }} />
                     <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove />
+                    <Remove style={{ cursor: "pointer" }} />
                   </ProductAmountContainer>
                   <ProductPrice>
                     $ {product.price * product.quantity}
                   </ProductPrice>
+                  <FiTrash2 style={{ marginTop: "15px", cursor: "pointer" }}/>
                 </PriceDetail>
               </Product>
             ))}
           </Info>
           <Summary>
             <SummaryTitle>سفارش شما</SummaryTitle>
-            <SummaryItem>
+            {/* <SummaryItem>
               <SummaryItemText>قیمت</SummaryItemText>
               <SummaryItemPrice> {cart.total} تومان</SummaryItemPrice>
-            </SummaryItem>
+            </SummaryItem> */}
             <SummaryItem>
-              <SummaryItemText>قابل پرداخت</SummaryItemText>
-              <SummaryItemPrice>0 <span>تومان</span></SummaryItemPrice>
+              <SummaryItemText>مجموع</SummaryItemText>
+              <SummaryItemPrice>{cart.total} <span>تومان</span></SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>تخفیف</SummaryItemText>
-              <SummaryItemPrice>0 <span>تومان</span></SummaryItemPrice>
+              <SummaryItemPrice>{0} <span>تومان</span></SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
-              <SummaryItemText>مجموع</SummaryItemText>
+              <SummaryItemText>قابل پرداخت</SummaryItemText>
               <SummaryItemPrice>{cart.total} تومان</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
