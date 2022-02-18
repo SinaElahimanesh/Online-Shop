@@ -74,7 +74,7 @@ const ProductList = () => {
     <Container>
       <Navbar />
       <Wrapper>
-        <Title>{cat}</Title>
+        <Title>{cat == 'men'? 'مردانه' : cat == 'women'? 'زنانه':'بچگانه'}</Title>
         {/* <FilterContainer>
           <Filter>
             <FilterText>فیلتر:</FilterText>

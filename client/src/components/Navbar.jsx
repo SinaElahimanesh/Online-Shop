@@ -134,7 +134,7 @@ console.log(cookies.get('username') !== undefined)
 
     <nav className="topnav" id="myTopnav">
       <ul class="menu">
-        <Link to="/cart" style={{color: '#fff'}}><li class="item cart"><AiOutlineShoppingCart size={23}/></li></Link>
+      {cookies.get('username') === undefined ? <div></div> : <Link to="/cart" style={{color: '#fff'}}><li class="item cart"><AiOutlineShoppingCart size={23}/></li></Link>}
 
         <li class="logo"><a href="/">Poosha</a></li>
         <a href="#contact" class="item" >تماس با ما</a>
