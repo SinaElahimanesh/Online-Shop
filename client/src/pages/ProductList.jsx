@@ -7,6 +7,7 @@ import { useLocation } from "react-router";
 import { useState } from "react";
 import About from "../components/About";
 import Product from "../components/Product";
+import Gallery from "../components/Gallery";
 
 const Container = styled.div`
 `;
@@ -105,7 +106,7 @@ const ProductList = () => {
         <Products cat={cat} filters={filters} sort={sort} />
         {/* <Product /> */}
         <hr />
-        <About />
+        <Gallery />
         <hr />
         <Footer />
       </Wrapper>
