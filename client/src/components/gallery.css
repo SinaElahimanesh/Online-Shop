@@ -124,3 +124,9 @@ h2 {
       
     }
   }
+
+  @media screen and (max-width: 600px) {
+    .projectTitle {
+      font-size: 15px;
+    }
+  }

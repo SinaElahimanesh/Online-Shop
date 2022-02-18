@@ -50,7 +50,7 @@ const Title = styled.h3`
   margin-bottom: 30px;
   text-align: center;
   font-family: 'A Iranian Sans';
-  ${mobile({  padding: "0", display: 'flex', marginLeft: "2em"})}
+  ${mobile({  padding: "0", display: 'flex', marginLeft: "2em", fontSize: "20px"})}
 `;
 
 const Right = styled.div`
@@ -58,12 +58,12 @@ const Right = styled.div`
   flex: 1;
   padding: 20px;
   font-family: 'A Iranian Sans';
-  ${mobile({ textAlign: "center", display: 'none' })}
+  ${mobile({ textAlign: "center", display: 'none' , fontSize: "12px"})}
 
 `;
 
 const Map = styled.div`
-    ${mobile({  padding: "0", display: 'flex', marginRight: "3em"})}
+    ${mobile({  padding: "auto", display: 'flex', margin: "auto" })}
 `;
 
 const ContactItem = styled.div`
@@ -71,7 +71,7 @@ const ContactItem = styled.div`
   display: flex;
   align-items: center;
   font-family: 'A Iranian Sans';
-  ${mobile({  padding: "0", display: 'flex'})}
+  ${mobile({  padding: "0", display: 'flex', fontSize: "15px"})}
 `;
 
 const Footer = () => {

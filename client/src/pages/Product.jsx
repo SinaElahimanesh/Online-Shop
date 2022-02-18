@@ -173,18 +173,11 @@ const Product = () => {
         
         <ImgContainer>
           <Image src={product.img} />
-
-          {/* <Image src="https://images.pexels.com/photos/3972510/pexels-photo-3972510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" /> */}
-          {/* <img src="../img/female-model-shooting-guide.jpg" alt="" /> */}
-          {/* <img src="../img/gallery-img/pic1.jpg"  /> */}
         </ImgContainer>
         <InfoContainer>
           <Title>{product.name}</Title>
           <Desc>{product.desc}</Desc>
           <Price>{product.price} تومان</Price>
-          {/* <Title>تست</Title>
-          <Desc>چند تا بولشت برای تو پاچه کردن مردم</Desc>
-          <Price>329000</Price> */}
           <FilterContainer>
             <Filter>
               <FilterTitle>رنگ</FilterTitle>
