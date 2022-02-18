@@ -1,5 +1,12 @@
 section{
     max-width: 100%;
+    font-family: 'A Iranian Sans';
+
+}
+
+*{
+    font-family: 'A Iranian Sans';
+
 }
 .login-wrap {
     /* background-color: #ea4b1f; */
@@ -15,6 +22,7 @@ section{
     /* color: #ea4f1b; */
     font-weight: bolder;
     margin-top: 10rem;
+    direction: rtl;
 }
 
 
@@ -29,6 +37,7 @@ section{
 .login-wrap p , a {
     color: #ea4;
     text-shadow: #111 1px 1px;
+
 }
 
 a:hover {
@@ -49,4 +58,13 @@ a:hover {
 
 .text-btn {
     font-weight: 100;
+}
+
+.lable {
+    margin-bottom: 5px;
+}
+
+.form-control {
+    margin: 7px;
+    direction: rtl;
 }

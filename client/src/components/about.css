@@ -55,27 +55,37 @@
 .image-div {
     padding-bottom: 40px;
 }
-  
+
+  .whyUsDetailContainer, .whyUsOptions {
+    font-family: 'A Iranian Sans';
+    color: #fff;
+  }
+
   @media only screen and (max-width: 600px) {
-    .gallery{
+
+    .whyUsOptions {
+        font-size: small;
+    }
+
+    .why-us-img {
+        margin-top: 10px;
+        margin-bottom: -19px;
+    }
+
+    .gallery {
       padding: "0px"; 
       flex-direction:"column";
     }
     
-    .stepsDescriptionContainer{
+    .stepsDescriptionContainer {
       display: flex;
       flex-direction: column;
       width: 100%;
       /* margin-right: 10px; */
     }
-    
+
     /* .card{
       width: 100%;
       height: 150px;
     } */
-  }
-
-  .whyUsDetailContainer, .whyUsOptions {
-    font-family: 'A Iranian Sans';
-    color: #fff;
   }

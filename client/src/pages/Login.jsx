@@ -33,29 +33,29 @@ const Login = () => {
 						<div className="login-wrap p-4 p-md-5">
 			      	<div className="d-flex">
 			      		<div className="w-100">
-			      			<h3 className="mb-4">Sign In</h3>
+			      			<h3 className="mb-4">ورود</h3>
 			      		</div>
 			      	</div>
 							<form action="#" className="signin-form">
 			      		<div className="form-group mb-3">
-			      			<label className="label" for="name">Username</label>
+			      			<label className="label" for="name">نام کاربری</label>
 			      			<input type="text" className="form-control" 
-                  placeholder="Username" required 
+                  placeholder="نام کاربری" required 
                   onChange={(e) => setUsername(e.target.value)} />
 			      		</div>
 		            <div className="form-group mb-3">
-		            	<label className="label" for="password">Password</label>
+		            	<label className="label" for="password">رمزعبور</label>
 		              <input type="password" className="form-control" 
-                  placeholder="Password" required
+                  placeholder="رمزعبور" required
                   onChange={(e) => setPassword(e.target.value)} />
 		            </div>
 		            <div className="form-group">
 		            	<button type="submit" className="form-control btn rounded submit px-3" 
-                   onClick={handleClick}>Sign In</button>
-                   {error && <Error>Something went wrong...</Error>}
+                   onClick={handleClick}>ورود</button>
+                   {error && <Error>خطایی رخ داده است...</Error>}
 		            </div>
 		          </form>
-		          <p className="text-center">Not a member? <Link to="/register">Sign Up</Link></p>
+		          <p className="text-center">حساب ندارید؟ <Link to="/register">ثبت نام کنید</Link></p>
 		        </div>
 		      </div>
 				</div>
