@@ -17,7 +17,7 @@ const NavbarWeb = () => {
                 <Nav className="me-auto">
                 <Nav.Link className='item' href="#features">ورود</Nav.Link>
                 <Nav.Link className='item' href="#pricing">خانه</Nav.Link>
-                <NavDropdown style={{}} className='item' title='دسته بندی' id="collasible-nav-dropdown">
+                <NavDropdown className='item' title='دسته بندی' id="collasible-nav-dropdown">
                     <NavDropdown.Item style={{textAlign: "center", fontFamily: 'A Iranian Sans'}} class='drop-item' href="/products/men">مردانه</NavDropdown.Item>
                     <NavDropdown.Item style={{textAlign: "center", fontFamily: 'A Iranian Sans'}} class='drop-item' href="/products/women">زنانه</NavDropdown.Item>
                     <NavDropdown.Item style={{textAlign: "center", fontFamily: 'A Iranian Sans'}} class='drop-item' href="/products/child">بچگانه</NavDropdown.Item>
