@@ -134,7 +134,7 @@ console.log(cookies.get('username') !== undefined)
 
     <nav className="topnav" id="myTopnav">
       <ul class="menu">
-        <Link to="/cart" style={{color: '#fff'}}><li class="item cart"><AiOutlineShoppingCart /></li></Link>
+        <Link to="/cart" style={{color: '#fff'}}><li class="item cart" ><AiOutlineShoppingCart /></li></Link>
         <li class="logo"><a href="/">Poosha</a></li>
         <li class="item"><a href="#contact">تماس با ما</a></li>
         <li class="item"><a href="/#gallery">گالری</a></li>

@@ -207,37 +207,24 @@ const Cart = () => {
     setStripeToken(token);
   };
   
-  
-    const handleQuantity = useEffect(() => {
-      const handleQuantity = (type, product) => {
-        // if (type === "dec") {
-        //   product.quantity > 1 && setQuantity(product.quantity - 1);
-        // } else {
-        //   setQuantity(product.quantity + 1);
-        // }
-      const index = productss.indexOf(product);
-      if (index > -1) {
-      productss.splice(index, 1)
-      console.log((productss))
+  const handleQuantity = (type, product) => {
+    // if (type === "dec") {
+    //   product.quantity > 1 && setQuantity(product.quantity - 1);
+    // } else {
+    //   setQuantity(product.quantity + 1);
+    // }
+    const index = productss.indexOf(product);
+if (index > -1) {
+  ; // 2nd parameter means remove one item only
+  productss.splice(index, 1)
+  console.log((productss))
   const lst = productss
-  setProductss(lst)
-};
+  setProductss(lst);
+
+  cart.products = productss
+  console.log('lennnn', cart.products.length)
 }
-   },[cart])
-
-   
-//     const index = productss.indexOf(product);
-// if (index > -1) {
-//   ; // 2nd parameter means remove one item only
-//   productss.splice(index, 1)
-//   console.log((productss))
-//   const lst = productss
-//   setProductss(lst);
-
-//   cart.products = productss
-//   console.log('lennnn', cart.products.length)
-// }
-
+  };
 
   useEffect(() => {
     const makeRequest = async () => {
@@ -279,7 +266,7 @@ const Cart = () => {
                     </ProductId> */}
                     <ProductColor color={product.color} />
                     <ProductSize>
-                      <b  style={{fontFamily: 'A Iranian Sans'}}>سایز:</b> {product.size}
+                      <b  style={{fontFamily: 'A Iranian Sans'}}>توضیحات:</b> {product.desc}
                     </ProductSize>
                   </Details>
                 </ProductDetail>
