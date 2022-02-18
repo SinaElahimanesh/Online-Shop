@@ -138,7 +138,6 @@ const Product = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-  console.log('jjj', id)
     const getProduct = async () => {
       try {
         const res = await publicRequest.get("/products/find/" + id);

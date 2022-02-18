@@ -197,11 +197,33 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  // const [productss, setProductss] = useState(cart.products)
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
+  
+  const [productss, setProductss] = useState(cart.products); // set campaign as default
 
   const onToken = (token) => {
     setStripeToken(token);
+  };
+  
+  const handleQuantity = (type, product) => {
+    // if (type === "dec") {
+    //   product.quantity > 1 && setQuantity(product.quantity - 1);
+    // } else {
+    //   setQuantity(product.quantity + 1);
+    // }
+    const index = productss.indexOf(product);
+if (index > -1) {
+  ; // 2nd parameter means remove one item only
+  productss.splice(index, 1)
+  console.log((productss))
+  const lst = productss
+  setProductss(lst);
+
+  cart.products = productss
+  console.log('lennnn', cart.products.length)
+}
   };
 
   useEffect(() => {
@@ -231,7 +253,7 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            {cart.products.map((product) => (
+            {productss.map((product) => (
               <Product>
                 <ProductDetail>
                   <Image src={product.img} />
@@ -244,15 +266,15 @@ const Cart = () => {
                     </ProductId> */}
                     <ProductColor color={product.color} />
                     <ProductSize>
-                      <b  style={{fontFamily: 'A Iranian Sans'}}>سایز:</b> {product.size}
+                      <b  style={{fontFamily: 'A Iranian Sans'}}>توضیحات:</b> {product.desc}
                     </ProductSize>
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add style={{ cursor: "pointer" }} />
+                    <Add style={{ cursor: "pointer" }} onClick={() => handleQuantity("inc", product)} />
                     <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove style={{ cursor: "pointer" }} />
+                    <Remove style={{ cursor: "pointer" }} onClick={() => handleQuantity("dec", product)} />
                   </ProductAmountContainer>
                   <ProductPrice  style={{fontFamily: 'A Iranian Sans', fontSize: "18px"}}>
                     تومان {product.price * product.quantity}
