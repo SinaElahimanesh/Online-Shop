@@ -152,6 +152,10 @@ console.log(cookies.get('username') !== undefined)
 
         <li class="item"><a href="/">خانه</a></li>
         {cookies.get('username') === undefined ? <li class="item"><a href="/login">ورود</a></li> : <li class="item"><a href="#">{cookies.get('username')}</a></li>}
+        {cookies.get('username') !== undefined ? <i class="item" onClick={() => {
+               cookies.remove('username', { path: '/' });
+               window.location.reload();
+          }}><a href='#'>خروج از حساب کاربری</a></i>:<div></div>}
         {/* <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li> */}
         
 
