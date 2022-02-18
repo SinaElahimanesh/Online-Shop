@@ -51,7 +51,7 @@ const Login = () => {
 		            </div>
 		            <div className="form-group">
 		            	<button type="submit" className="form-control btn rounded submit px-3" 
-                   onClick={handleClick} disabled={isFetching}>Sign In</button>
+                   onClick={handleClick}>Sign In</button>
                    {error && <Error>Something went wrong...</Error>}
 		            </div>
 		          </form>
