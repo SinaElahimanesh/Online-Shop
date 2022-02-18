@@ -11,6 +11,7 @@ import { useHistory } from "react-router";
 import { popularProducts } from "../data";
 import "../components/slider.css";
 import { FiTrash2 } from 'react-icons/fi'
+import { removeProduct } from "../redux/cartRedux";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -213,17 +214,21 @@ const Cart = () => {
     // } else {
     //   setQuantity(product.quantity + 1);
     // }
-    const index = productss.indexOf(product);
-if (index > -1) {
-  ; // 2nd parameter means remove one item only
-  productss.splice(index, 1)
-  console.log((productss))
-  const lst = productss
-  setProductss(lst);
+    setProductss(productss.filter(item => item != product));
+    // dispatch(
+    //   removeProduct({ ...product, product.quantity, product.color, product.size })
+    // );
+//     const index = productss.indexOf(product);
+// if (index > -1) {
+//   ; // 2nd parameter means remove one item only
+//   productss.splice(index, 1)
+//   console.log((productss))
+//   const lst = productss
+//   setProductss(lst);
 
-  cart.products = productss
-  console.log('lennnn', cart.products.length)
-}
+//   cart.products = productss
+//   console.log('lennnn', cart.products.length)
+// }
   };
 
   useEffect(() => {
@@ -272,14 +277,14 @@ if (index > -1) {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add style={{ cursor: "pointer" }} onClick={() => handleQuantity("inc", product)} />
+                    {/* <Add style={{ cursor: "pointer" }} onClick={() => handleQuantity("inc", product)} /> */}
                     <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove style={{ cursor: "pointer" }} onClick={() => handleQuantity("dec", product)} />
+                    {/* <Remove style={{ cursor: "pointer" }} onClick={() => handleQuantity("dec", product)} /> */}
                   </ProductAmountContainer>
                   <ProductPrice  style={{fontFamily: 'A Iranian Sans', fontSize: "18px"}}>
                     تومان {product.price * product.quantity}
                   </ProductPrice>
-                  <FiTrash2 style={{ marginTop: "15px", cursor: "pointer", margin: "10px" }}/>
+                  <FiTrash2 style={{ marginTop: "15px", cursor: "pointer", margin: "10px" }} onClick={() => handleQuantity("dec", product)}/>
                 </PriceDetail>
               </Product>
             ))}
